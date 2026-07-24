@@ -78,7 +78,7 @@ export default function WorkGallery({
                   className="group relative block w-full overflow-hidden rounded-[32px]"
                 >
                   <Image
-                    src={image}
+                    src={image.url}
                     alt={project.title}
                     width={1000}
                     height={1200}
