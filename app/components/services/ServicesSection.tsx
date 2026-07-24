@@ -65,7 +65,7 @@ const servicesData: ServiceItem[] = [
     description:
       "Mengarahkan konsep visual secara menyeluruh untuk memastikan semua aset kreatif selaras dengan strategi dan tujuan utama brand.",
     offerings: ["Visual Concept & Moodboarding", "Campaign Direction", "Brand Aesthetic Strategy", "Art Direction"],
-  deliverables: ["Creative Brief & Moodboard PDF", "Visual Strategy Blueprint", "Campaign Execution Guide"],
+    deliverables: ["Creative Brief & Moodboard PDF", "Visual Strategy Blueprint", "Campaign Execution Guide"],
   },
 ];
 
