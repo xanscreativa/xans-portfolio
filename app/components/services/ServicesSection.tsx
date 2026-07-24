@@ -15,36 +15,57 @@ interface ServiceItem {
 const servicesData: ServiceItem[] = [
   {
     number: "01",
-    title: "Brand Identity & Systems",
+    title: "Brand Identity",
     tagline: "Building cohesive, memorable, and scalable brand foundations.",
     description:
-      "Merancang identitas visual yang tidak hanya terlihat menarik, tetapi juga menyampaikan cerita dan nilai inti bisnis secara konsisten di seluruh titik sentuh media.",
-    offerings: ["Logo Design & Grid System", "Visual Identity Guidelines", "Brand Asset Library", "Typography & Color Palette"],
-    deliverables: ["Vector Logo Files (AI, SVG)", "Brand Guideline PDF", "Social Media Templates", "Print Assets"],
+      "Merancang identitas visual yang unik dan berkesan untuk memperkuat karakter inti merek kamu. Dari pembuatan logo hingga panduan gaya yang konsisten.",
+    offerings: ["Logo Design & Grid System", "Visual Identity Guidelines", "Color Palette & Typography", "Brand Asset Library"],
+    deliverables: ["Vector Logo Files (AI, SVG)", "Brand Guideline PDF", "Social Media Kits", "Stationery Assets"],
   },
   {
     number: "02",
-    title: "Motion Design & Video Editing",
-    tagline: "Dynamic visual storytelling that captures attention instantly.",
-    description: "Mengubah ide menjadi animasi dan susunan video ritmis yang hidup. Berfokus pada dinamika motion, ritme pacing, dan visual efek bernilai komersial tinggi.",
-    offerings: ["Commercial & Promo Editing", "Motion Graphics & VFX", "Short-Form Video (Reels/TikTok)", "AI Assisted Visuals & 3D Render"],
-    deliverables: ["Full HD / 4K Export Render", "Source Project Files", "Multi-Format Cuts (16:9, 9:16, 1:1)", "Sound Design Integration"],
+    title: "Graphic Design",
+    tagline: "Eye-catching materials tailored for digital and print media.",
+    description:
+      "Menyediakan solusi desain grafis serbaguna untuk kebutuhan promosi digital maupun cetak agar pesan brand kamu tersampaikan dengan jelas.",
+    offerings: ["Social Media Graphics", "Marketing & Promotional Ads", "Poster & Banner Design", "Print & Editorial Media"],
+    deliverables: ["High-Res PNG/JPG Packs", "Print-Ready PDF Files", "Editable Source Files"],
   },
   {
     number: "03",
-    title: "Social Media & Campaign Visuals",
-    tagline: "High-converting visual assets tailored for modern digital channels.",
-    description: "Membuat kampanye visual berketerikatan tinggi untuk platform media sosial agar merek kamu menonjol di tengah padatnya feed audiens.",
-    offerings: ["Social Media Carousel Design", "Campaign Poster & Key Visuals", "Content Strategy Alignment", "Interactive Stories Templates"],
-    deliverables: ["High-Res PNG/JPG Packs", "Editable Figma/PSD Templates", "Exported Motion Banners"],
+    title: "Video Editing",
+    tagline: "Transforming raw footage into compelling visual stories.",
+    description:
+      "Mengolah materi video mentah menjadi tontonan yang hidup melalui transisi halus, ritme pacing yang pas, hingga pemrosesan audio yang jernih.",
+    offerings: ["Commercial & Promo Editing", "Short-Form Content (Reels/TikTok)", "Color Grading & Correction", "Audio Post-Production"],
+    deliverables: ["Full HD / 4K Render Files", "Multi-Format Cuts (16:9, 9:16)", "Project Sound Mix"],
   },
   {
     number: "04",
-    title: "Church & Event Creative Media",
-    tagline: "Elevating worship & live event experiences through powerful visuals.",
-    description: "Pengalaman khusus dalam merancang aset media panggung, visual latar belakang live streaming, serta materi promosi acara secara profesional.",
-    offerings: ["Stage Screen Visuals & Backgrounds", "Livestream Lower Thirds & Overlays", "Sermon Series Key Art", "Event Promotion Reels"],
-    deliverables: ["Looping Motion Backgrounds", "OBS/ProPresenter Graphics", "Print & Digital Posters"],
+    title: "Illustration",
+    tagline: "Custom artwork crafted to elevate your brand storytelling.",
+    description:
+      "Membuat karya seni dan ilustrasi kustom yang menambah nilai estetika serta keunikan visual pada kampanye atau produk kamu.",
+    offerings: ["Custom Digital Artwork", "Vector Illustration", "Character Design", "Editorial & Storyboard Art"],
+    deliverables: ["High-Res Vector & Raster Assets", "Layered Source Files (PSD/AI)"],
+  },
+  {
+    number: "05",
+    title: "Motion Design",
+    tagline: "Bringing static visuals to life with dynamic motion.",
+    description:
+      "Menghidupkan elemen visual statis menjadi animasi bergerak yang dinamis untuk menarik perhatian audiens secara instan.",
+    offerings: ["Logo Animation", "Explainer Motion Graphics", "UI/UX Micro-interactions", "Visual Effects (VFX)"],
+    deliverables: ["Looping MP4/GIF Files", "Lottie/JSON Animations", "Alpha Channel Transparent Video"],
+  },
+  {
+    number: "06",
+    title: "Creative Direction",
+    tagline: "Strategic visual leadership and cohesive aesthetic vision.",
+    description:
+      "Mengarahkan konsep visual secara menyeluruh untuk memastikan semua aset kreatif selaras dengan strategi dan tujuan utama brand.",
+    offerings: ["Visual Concept & Moodboarding", "Campaign Direction", "Brand Aesthetic Strategy", "Art Direction"],
+  deliverables: ["Creative Brief & Moodboard PDF", "Visual Strategy Blueprint", "Campaign Execution Guide"],
   },
 ];
 
