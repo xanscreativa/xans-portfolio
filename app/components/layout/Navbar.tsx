@@ -111,7 +111,7 @@ export default function Navbar() {
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "/#contact")}
-            className="inline-flex items-center justify-center rounded-full bg-pink-500 px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_10px_20px_rgba(236,72,153,0.25)] transition-all duration-300 hover:bg-pink-600 hover:shadow-[0_12px_25px_rgba(236,72,153,0.35)] hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center rounded-full bg-[#ec4899] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_10px_20px_rgba(236,72,153,0.25)] transition-all duration-300 hover:bg-[#db2777] hover:shadow-[0_12px_25px_rgba(236,72,153,0.35)] hover:-translate-y-0.5"
           >
             Connect
           </Link>
@@ -182,7 +182,7 @@ export default function Navbar() {
             <Link
               href="/#contact"
               onClick={(e) => handleNavClick(e, "/#contact")}
-              className="flex w-full items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 py-4 text-center text-sm font-bold uppercase tracking-widest text-white shadow-[0_12px_30px_rgba(236,72,153,0.25)] active:scale-[0.98] transition-all"
+              className="flex w-full items-center justify-center rounded-full bg-[#ec4899] hover:bg-[#db2777] py-4 text-center text-sm font-bold uppercase tracking-widest text-white shadow-[0_12px_30px_rgba(236,72,153,0.25)] active:scale-[0.98] transition-all"
             >
               Connect
             </Link>
