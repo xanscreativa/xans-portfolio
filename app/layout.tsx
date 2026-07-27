@@ -7,6 +7,7 @@ import LoadingScreen from "./components/ui/LoadingScreen";
 import PageLoader from "./components/layout/PageLoader";
 import PageTransition from "./components/layout/PageTransition";
 import CustomCursor from "./components/layout/CustomCursor";
+import Navbar from "./components/layout/Navbar";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -44,24 +45,18 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "XANS®",
-    description:
-      "Creative Designer & Video Editor",
+    description: "Creative Designer & Video Editor",
     url: "https://xansstudio.com",
     siteName: "XANS CREATIVA",
-    images: [
-      "/og-cover.jpg",
-    ],
+    images: ["/og-cover.jpg"],
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
     title: "XANS®",
-    description:
-      "Creative Designer & Video Editor",
-    images: [
-      "/og-cover.jpg",
-    ],
+    description: "Creative Designer & Video Editor",
+    images: ["/og-cover.jpg"],
   },
 
   icons: {
@@ -90,6 +85,8 @@ export default function RootLayout({
         <Cursor />
 
         <CustomCursor />
+
+        <Navbar />
 
         <PageTransition>{children}</PageTransition>
       </body>
