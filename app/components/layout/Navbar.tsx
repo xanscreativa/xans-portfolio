@@ -63,14 +63,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 w-full max-w-full overflow-x-hidden transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-50 w-full max-w-full transition-all duration-300 ${
         scrolled
-          ? "border-b border-pink-100/60 bg-white/90 py-3 shadow-[0_4px_20px_rgba(229,135,176,0.08)] backdrop-blur-md"
-          : "bg-white/80 py-4 backdrop-blur-sm lg:bg-transparent lg:py-5"
+          ? "border-b border-pink-100/60 bg-white/90 py-2.5 shadow-[0_4px_20px_rgba(229,135,176,0.08)] backdrop-blur-md"
+          : "bg-white/90 py-2.5 backdrop-blur-md lg:bg-transparent lg:py-3.5"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-full min-w-0 flex-row items-center justify-between px-3 sm:px-6 lg:w-full lg:max-w-7xl lg:px-8">
-        {/* Single Logo Component */}
+      <div className="mx-auto flex w-full max-w-full min-w-0 flex-row items-center justify-between px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        {/* Logo */}
         <Link
           href="/"
           className="group flex items-center gap-1.5 z-10"
@@ -119,12 +119,16 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-pink-50 text-pink-600 shadow-xs transition-transform active:scale-95 lg:hidden"
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setMobileMenuOpen((prev) => !prev);
+          }}
+          className="relative z-50 flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-pink-50 text-pink-600 shadow-xs transition-transform active:scale-95 lg:hidden"
           aria-label="Toggle Menu"
         >
           <svg
-            className="h-5 w-5"
+            className="h-5 w-5 pointer-events-none"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -150,8 +154,8 @@ export default function Navbar() {
 
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-x-0 top-[61px] bottom-0 z-40 flex max-w-full flex-col justify-between overflow-y-auto overflow-x-hidden border-t border-pink-100/50 bg-white/95 p-4 backdrop-blur-2xl sm:p-6 lg:hidden">
-          <div className="flex flex-col items-stretch gap-3 pt-2">
+        <div className="absolute inset-x-0 top-full z-40 flex h-[calc(100vh-100%)] min-h-[calc(100vh-60px)] flex-col justify-between overflow-y-auto border-t border-pink-100/50 bg-white/95 p-6 backdrop-blur-2xl shadow-xl lg:hidden">
+          <div className="my-auto flex w-full flex-col items-stretch gap-3">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -159,7 +163,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`flex items-center justify-between rounded-2xl px-6 py-4 text-base font-bold uppercase tracking-wider transition-all ${
+                  className={`flex items-center justify-center gap-2 rounded-2xl px-6 py-4 text-base font-bold uppercase tracking-wider transition-all ${
                     isActive
                       ? "bg-pink-50/80 text-pink-600"
                       : "text-[#2D2433] hover:bg-gray-50 active:bg-pink-50/50"
@@ -174,11 +178,11 @@ export default function Navbar() {
             })}
           </div>
 
-          <div className="pt-6 pb-4">
+          <div className="w-full pt-4 pb-16">
             <Link
               href="/#contact"
               onClick={(e) => handleNavClick(e, "/#contact")}
-              className="flex w-full items-center justify-center rounded-full bg-pink-500 py-4 text-center text-sm font-bold uppercase tracking-widest text-white shadow-[0_12px_30px_rgba(236,72,153,0.25)] active:scale-[0.98] transition-transform"
+              className="flex w-full items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 py-4 text-center text-sm font-bold uppercase tracking-widest text-white shadow-[0_12px_30px_rgba(236,72,153,0.25)] active:scale-[0.98] transition-all"
             >
               Connect
             </Link>
