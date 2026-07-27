@@ -72,10 +72,11 @@ export default function VideoCard({ project }: { project: any }) {
       {/* Details Section */}
       <div className="flex flex-1 flex-col justify-between p-3.5 pt-4">
         <div>
-          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-pink-500">
+          {/* Hierarki kategori disamakan dengan bagian Hero */}
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-pink-500 sm:tracking-[0.25em]">
             {project.category}
           </span>
-          <h3 className="mt-1 text-lg font-black text-[#2D2433] transition-colors group-hover:text-pink-500">
+          <h3 className="mt-1 text-base sm:text-lg font-black text-[#2D2433] transition-colors group-hover:text-pink-500">
             {project.title}
           </h3>
           <p className="mt-1.5 text-xs leading-relaxed text-[#6B6570] line-clamp-2">
@@ -96,11 +97,11 @@ export default function VideoCard({ project }: { project: any }) {
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-5 flex gap-2 pt-2">
+        <div className="mt-5 flex flex-col sm:flex-row gap-2 pt-2">
           {projectLink && (
             <Link
               href={projectLink}
-              className="flex-1 rounded-full bg-[#E96A98] py-2 text-center text-xs font-semibold text-white transition hover:bg-[#d85886]"
+              className="flex-1 rounded-full bg-[#E96A98] py-2.5 text-center text-xs font-semibold text-white transition hover:bg-[#d85886]"
             >
               View Project →
             </Link>
@@ -110,7 +111,7 @@ export default function VideoCard({ project }: { project: any }) {
               href={playlistLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-pink-200 bg-white px-3.5 py-2 text-center text-xs font-semibold text-[#2D2433] transition hover:bg-pink-50"
+              className="rounded-full border border-pink-200 bg-white py-2.5 px-4 text-center text-xs font-semibold text-[#2D2433] transition hover:bg-pink-50"
             >
               Playlist →
             </a>

@@ -63,13 +63,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-50 w-full max-w-full overflow-x-hidden transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-pink-100/60 shadow-[0_4px_20px_rgba(229,135,176,0.08)] py-3"
-          : "bg-white/80 backdrop-blur-sm py-4 lg:bg-transparent lg:py-5"
+          ? "border-b border-pink-100/60 bg-white/90 py-3 shadow-[0_4px_20px_rgba(229,135,176,0.08)] backdrop-blur-md"
+          : "bg-white/80 py-4 backdrop-blur-sm lg:bg-transparent lg:py-5"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-none flex-row items-center justify-between px-4 sm:px-6 lg:w-[92%] lg:max-w-7xl lg:px-0">
+      <div className="mx-auto flex w-full max-w-full min-w-0 flex-row items-center justify-between px-3 sm:px-6 lg:w-full lg:max-w-7xl lg:px-8">
         {/* Single Logo Component */}
         <Link
           href="/"
@@ -120,7 +120,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-pink-50 text-pink-600 lg:hidden shadow-xs active:scale-95 transition-transform z-10"
+          className="z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-pink-50 text-pink-600 shadow-xs transition-transform active:scale-95 lg:hidden"
           aria-label="Toggle Menu"
         >
           <svg
@@ -150,7 +150,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-x-0 top-[61px] bottom-0 z-40 flex flex-col justify-between overflow-y-auto border-t border-pink-100/50 bg-white/95 p-6 backdrop-blur-2xl lg:hidden">
+        <div className="fixed inset-x-0 top-[61px] bottom-0 z-40 flex max-w-full flex-col justify-between overflow-y-auto overflow-x-hidden border-t border-pink-100/50 bg-white/95 p-4 backdrop-blur-2xl sm:p-6 lg:hidden">
           <div className="flex flex-col items-stretch gap-3 pt-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;

@@ -41,44 +41,46 @@ const processSteps = [
 
 export default function HowIWork() {
   return (
-    <section className="bg-[#FFF8F9] py-32">
-      <div className="mx-auto w-[92%] max-w-7xl">
+    <section className="relative overflow-hidden bg-[#FFF8F9] pb-8 pt-10 sm:py-24 lg:py-32">
+      <div className="relative mx-auto w-[88%] max-w-7xl sm:w-[92%]">
         <FadeUp>
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.4em] text-pink-500">
-            Creative Process
-          </p>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-pink-500 sm:text-xs sm:tracking-[0.45em]">
+              Creative Process
+            </p>
 
-          <h2 className="mt-4 text-center text-5xl font-black text-[#2D2433]">
-            How I Work
-          </h2>
+            <h2 className="mt-1.5 text-xl font-black leading-snug text-[#2D2433] sm:mt-3 sm:text-4xl lg:text-5xl">
+              How I Work
+            </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-[#6B6570]">
-            Every project follows a structured creative workflow to ensure every
-            design is meaningful, strategic, and visually impactful.
-          </p>
+            <p className="mx-auto mt-2 max-w-2xl text-xs leading-relaxed text-[#6B6570] sm:mt-4 sm:text-base sm:leading-relaxed">
+              Every project follows a structured creative workflow to ensure every
+              design is meaningful, strategic, and visually impactful.
+            </p>
+          </div>
         </FadeUp>
 
-        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {/* Grid Card Ringkas & Presisi */}
+        <div className="mt-5 grid gap-2.5 sm:mt-12 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {processSteps.map((step, index) => (
-            <FadeUp key={step.number} delay={index * 0.08}>
-              <div className="group relative flex h-full flex-col justify-between rounded-[32px] border border-pink-100 bg-white p-8 shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-pink-300 hover:shadow-xl">
+            <FadeUp key={step.number} delay={index * 0.05}>
+              <div className="group relative flex h-full flex-col justify-between rounded-xl border border-pink-100 bg-white p-4 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-pink-300 hover:shadow-md sm:rounded-2xl sm:p-6">
                 <div>
-                  {/* Angka dengan Warna Pink Vibrant agar tidak pucat */}
-                  <span className="text-5xl font-extrabold tracking-tight text-pink-500 transition-colors duration-300 group-hover:text-pink-600">
+                  <span className="text-xl font-black tracking-tight text-pink-500 transition-colors duration-300 group-hover:text-pink-600 sm:text-3xl">
                     {step.number}
                   </span>
 
-                  <h3 className="mt-6 text-2xl font-bold text-[#2D2433]">
+                  <h3 className="mt-2 text-sm font-bold text-[#2D2433] sm:mt-4 sm:text-xl">
                     {step.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-relaxed text-[#6B6570]">
+                  <p className="mt-1 text-[11px] leading-relaxed text-[#6B6570] sm:mt-2 sm:text-sm sm:leading-relaxed">
                     {step.description}
                   </p>
                 </div>
 
                 {/* Aksesoris Garis Dekoratif Kecil di Bawah Card */}
-                <div className="mt-8 h-1 w-12 rounded-full bg-pink-100 transition-all duration-500 group-hover:w-full group-hover:bg-pink-400" />
+                <div className="mt-4 h-0.5 w-8 rounded-full bg-pink-100 transition-all duration-300 group-hover:w-full group-hover:bg-pink-400 sm:mt-6 sm:h-1 sm:w-12" />
               </div>
             </FadeUp>
           ))}

@@ -112,6 +112,7 @@ export default function Lightbox({
                 width={1800}
                 height={1800}
                 priority
+                sizes="(max-width: 768px) 100vw, 80vw"
                 className="max-h-[82vh] w-auto rounded-3xl object-contain shadow-[0_40px_120px_rgba(0,0,0,.45)]"
               />
             </div>

@@ -81,6 +81,7 @@ export default function GalleryLightbox({
                 src={currentImage.url}
                 alt={currentImage.caption || "Gallery Preview"}
                 fill
+                sizes="(max-width: 768px) 100vw, 90vw"
                 className="object-contain"
                 priority
               />

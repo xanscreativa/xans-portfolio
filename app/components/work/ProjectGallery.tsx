@@ -91,7 +91,7 @@ export default function ProjectGallery({ items }: ProjectGalleryProps) {
                   src={item.url}
                   alt={item.caption || `Gallery item ${idx + 1}`}
                   fill
-                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               ) : (
@@ -145,6 +145,7 @@ export default function ProjectGallery({ items }: ProjectGalleryProps) {
                   src={items[selectedIndex].url}
                   alt={items[selectedIndex].caption || "Enlarged preview"}
                   fill
+                  sizes="(max-width: 768px) 100vw, 80vw"
                   className="object-contain"
                 />
               ) : (

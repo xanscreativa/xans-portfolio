@@ -1,7 +1,6 @@
 import Footer from "./components/layout/Footer";
 
 import Hero from "./components/sections/Hero";
-import FeaturedWorks from "./components/sections/FeaturedWorks";
 import PortfolioGallery from "./components/sections/PortfolioGallery";
 import About from "./components/sections/About";
 import Skills from "./components/sections/Skills";
@@ -18,7 +17,6 @@ export default function Home() {
 
         {/* Section Work / Portfolio */}
         <section id="portfolio" className="scroll-mt-24">
-          <FeaturedWorks />
           <PortfolioGallery />
         </section>
 

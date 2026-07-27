@@ -55,14 +55,15 @@ export default function Footer() {
             Let&apos;s Connect
           </p>
 
-          <div className="flex flex-wrap justify-center gap-2.5 xs:gap-3 lg:justify-start">
+          {/* Social Buttons Grid: 2 kolom di mobile, berjejer ke samping di layar besar */}
+          <div className="grid grid-cols-2 gap-2.5 w-full max-w-xs xs:gap-3 sm:max-w-none sm:flex sm:flex-wrap sm:justify-start sm:w-auto">
             {socials.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-pink-200 bg-white/80 px-4 py-2 text-[11px] font-semibold text-[#2D2433] shadow-xs backdrop-blur-xs transition-all duration-300 hover:-translate-y-1 hover:border-pink-500 hover:bg-pink-500 hover:text-white hover:shadow-md xs:px-5 xs:py-2.5 xs:text-xs"
+                className="flex items-center justify-center rounded-full border border-pink-200 bg-white/80 px-4 py-2 text-[11px] font-semibold text-[#2D2433] shadow-xs backdrop-blur-xs transition-all duration-300 hover:-translate-y-1 hover:border-pink-500 hover:bg-pink-500 hover:text-white hover:shadow-md xs:px-5 xs:py-2.5 xs:text-xs"
               >
                 {item.label}
               </a>

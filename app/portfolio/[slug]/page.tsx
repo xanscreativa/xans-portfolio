@@ -48,6 +48,7 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
             alt={collection.title}
             fill
             priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             className="object-cover"
           />
         </div>
@@ -68,6 +69,7 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
                     src={item.cover}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>

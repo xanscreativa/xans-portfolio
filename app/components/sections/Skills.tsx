@@ -1,3 +1,5 @@
+"use client";
+
 import FadeUp from "../animation/FadeUp";
 
 interface ToolItem {
@@ -57,57 +59,72 @@ const skills: SkillCategory[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-[#FFFDFB] py-32">
-      <div className="mx-auto w-[92%] max-w-7xl">
-        <p className="text-center uppercase tracking-[0.4em] text-pink-500">
-          Skills & Software
-        </p>
+    <section
+      id="skills"
+      className="relative overflow-hidden border-t border-pink-100/60 bg-[#FFFDFB] pb-8 pt-10 sm:py-24 lg:py-32"
+    >
+      {/* Background Glow */}
+      <div className="pointer-events-none hidden absolute -left-32 top-1/2 h-[250px] w-[250px] -translate-y-1/2 rounded-full bg-pink-100/40 blur-[100px] sm:-left-52 sm:block sm:h-[520px] sm:w-[520px] sm:blur-[180px]" />
+      <div className="pointer-events-none hidden absolute -right-32 top-1/2 h-[250px] w-[250px] -translate-y-1/2 rounded-full bg-pink-100/40 blur-[100px] sm:right-[-180px] sm:block sm:h-[520px] sm:w-[520px] sm:blur-[180px]" />
 
-        <h2 className="mt-4 text-center text-5xl font-black text-[#2D2433]">
-          Tools I Use Everyday
-        </h2>
+      <div className="relative mx-auto w-[88%] max-w-7xl sm:w-[92%]">
+        {/* HEADER SECTION */}
+        <FadeUp>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-pink-500 sm:text-xs sm:tracking-[0.45em]">
+              SKILLS &amp; SOFTWARE
+            </p>
 
-        <p className="mx-auto mt-6 max-w-2xl text-center text-[#6B6570]">
-          Professional software and creative skills I use to build visual
-          identities, marketing materials, illustrations, and digital
-          experiences.
-        </p>
+            <h2 className="mt-1.5 text-xl font-black leading-snug text-[#2D2433] sm:mt-3 sm:text-4xl lg:text-5xl">
+              Tools I Use Everyday
+            </h2>
 
-        <div className="mt-20 grid gap-8 md:grid-cols-2">
+            <p className="mx-auto mt-2 max-w-2xl text-[11px] leading-relaxed text-[#6B6570] sm:mt-4 sm:text-base sm:leading-7">
+              Professional software and creative skills I use to build visual
+              identities, marketing materials, illustrations, and digital
+              experiences.
+            </p>
+          </div>
+        </FadeUp>
+
+        {/* SKILLS CARDS GRID */}
+        <div className="mt-5 grid gap-3 sm:mt-12 sm:gap-8 md:grid-cols-2">
           {skills.map((skill, index) => (
             <div
               key={skill.category}
               className={skill.isFullWidth ? "md:col-span-2" : ""}
             >
               <FadeUp delay={index * 0.08}>
-                <div className="rounded-4xl border border-pink-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:border-pink-300 hover:shadow-2xl">
-                  <h3 className="text-2xl font-bold text-[#2D2433]">
+                {/* Outer Card: p-3 di mobile, p-8 di desktop */}
+                <div className="rounded-2xl border border-pink-100 bg-white p-3 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-pink-300 hover:shadow-xl sm:rounded-4xl sm:p-8">
+                  {/* Category Title: text-sm font-bold */}
+                  <h3 className="text-sm font-bold text-[#2D2433] sm:text-2xl">
                     {skill.category}
                   </h3>
 
-                  {/* Jika Creative Skills (FullWidth), bagi isi tools menjadi 2 kolom */}
                   <div
-                    className={`mt-6 gap-3 ${
+                    className={`mt-2 sm:mt-6 gap-1.5 sm:gap-3 ${
                       skill.isFullWidth
                         ? "grid grid-cols-1 md:grid-cols-2"
                         : "flex flex-col"
                     }`}
                   >
                     {skill.tools.map((tool) => (
+                      /* Tool Row: py-1.5 px-2.5 di mobile */
                       <div
                         key={tool.name}
-                        className="flex items-center justify-between rounded-2xl bg-pink-50/50 p-3.5 border border-pink-100/60"
+                        className="flex items-center justify-between gap-2 rounded-lg border border-pink-100/60 bg-pink-50/40 px-2.5 py-1.5 sm:rounded-2xl sm:p-3.5"
                       >
-                        <span className="text-sm font-semibold text-[#2D2433]">
+                        <span className="text-[11px] font-semibold text-[#2D2433] sm:text-sm">
                           {tool.name}
                         </span>
 
-                        {/* Indikator 5 Lingkaran */}
-                        <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-pink-100 shadow-sm">
+                        {/* Indikator Dots: dikecilkan ke h-1.5 w-1.5 di mobile */}
+                        <div className="flex shrink-0 items-center gap-1 rounded-full border border-pink-100 bg-white px-1.5 py-0.5 shadow-2xs sm:gap-1.5 sm:px-3 sm:py-1.5">
                           {[1, 2, 3, 4, 5].map((dot) => (
                             <span
                               key={dot}
-                              className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                              className={`h-1.5 w-1.5 rounded-full transition-colors sm:h-2.5 sm:w-2.5 ${
                                 dot <= tool.level
                                   ? "bg-pink-500"
                                   : "bg-pink-100"

@@ -7,8 +7,19 @@ export default function Cursor() {
     x: -100,
     y: -100,
   });
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const updateDesktop = () => setIsDesktop(mediaQuery.matches);
+
+    updateDesktop();
+    mediaQuery.addEventListener("change", updateDesktop);
+
+    if (!mediaQuery.matches) {
+      return () => mediaQuery.removeEventListener("change", updateDesktop);
+    }
+
     const move = (e: MouseEvent) => {
       setMouse({
         x: e.clientX,
@@ -20,8 +31,13 @@ export default function Cursor() {
 
     return () => {
       window.removeEventListener("mousemove", move);
+      mediaQuery.removeEventListener("change", updateDesktop);
     };
   }, []);
+
+  if (!isDesktop) {
+    return null;
+  }
 
   return (
     <div

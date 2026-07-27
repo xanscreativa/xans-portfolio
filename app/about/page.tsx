@@ -77,39 +77,50 @@ export default function AboutPage() {
   return (
     <main className="bg-[#FFFDFC] text-[#2D2433]">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white py-12 sm:py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-white pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-28">
         <div className="absolute -left-16 top-16 h-80 w-80 rounded-full bg-pink-100 blur-[120px] opacity-20" />
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-pink-200/20 blur-[140px] opacity-30" />
 
         <div className="relative mx-auto w-[92%] max-w-7xl">
-          <div className="flex flex-col lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-12">
             
-            {/* Profile Image (Urutan 1 di Mobile, Urutan 2/Kanan di Desktop) */}
-            <div className="order-1 w-full lg:order-2 lg:col-span-5 mb-8 lg:mb-0">
+            {/* Profile Image (Atas di Mobile, Kanan di Desktop) */}
+            <div className="order-1 grid-cols-1 lg:order-2 lg:col-span-5">
               <FadeUp>
-                <div className="relative overflow-hidden rounded-[32px] border border-pink-100/80 bg-white p-3 shadow-[0_20px_60px_rgba(229,135,176,.1)]">
+                <div className="relative overflow-hidden rounded-4xl border border-pink-100/80 bg-white p-3 shadow-[0_20px_60px_rgba(229,135,176,.1)]">
                   <Image
                     src="/hero/profile.png"
                     alt="Portrait of Xandra"
                     width={800}
                     height={950}
-                    className="h-[380px] w-full rounded-[26px] object-cover object-top sm:h-[480px] lg:h-[540px]"
+                    className="h-95 w-full rounded-[26px] object-cover object-top sm:h-120 lg:h-135"
                     priority
                   />
+
+                  {/* Card Tagline (Kecil di kiri bawah foto & menimpa foto) */}
+                  <div className="absolute bottom-6 left-6 z-10 max-w-[190px] rounded-2xl border border-white/60 bg-white/80 p-3 shadow-lg backdrop-blur-md sm:max-w-[220px] sm:p-3.5">
+                    <p className="text-[11px] font-medium leading-tight text-[#5C5261] sm:text-xs">
+                      <span className="font-serif text-sm font-bold text-pink-500 sm:text-base">&ldquo;</span>
+                      Thoughtfully Crafted. Beautifully Remembered.
+                      <span className="font-serif text-sm font-bold text-pink-500 sm:text-base">&rdquo;</span>
+                    </p>
+                  </div>
                 </div>
               </FadeUp>
             </div>
 
-            {/* Hero Text & Actions (Urutan 2 di Mobile, Urutan 1/Kiri di Desktop) */}
-            <div className="order-2 w-full lg:order-1 lg:col-span-7">
+            {/* Hero Text & Actions (Bawah di Mobile, Kiri di Desktop) */}
+            <div className="order-2 grid-cols-1 lg:order-1 lg:col-span-7">
               <FadeUp>
                 <div className="max-w-2xl">
                   <p className="text-xs font-semibold uppercase tracking-[0.4em] text-pink-500">
-                    ABOUT ME
+                    ALEXANDRA
                   </p>
                   
+                  {/* Title Role diubah menjadi 2 baris */}
                   <h1 className="mt-4 text-3xl font-black leading-[1.15] tracking-tight text-[#2D2433] sm:text-5xl lg:text-6xl">
-                    Designing Visual Stories With Purpose.
+                    Graphic Designer <br />
+                    <span className="text-pink-500">&amp;</span> Video Editor
                   </h1>
                   
                   <div className="mt-6 space-y-4 text-base leading-relaxed text-[#6B6570] sm:text-lg">
@@ -190,7 +201,7 @@ export default function AboutPage() {
                     <div className="space-y-10">
                       {experienceBlocks.map((block) => (
                         <div key={block.title} className="relative pl-6 border-l-2 border-pink-200/80">
-                          <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-pink-500 ring-4 ring-white" />
+                          <span className="absolute -left-1.75 top-1 h-3 w-3 rounded-full bg-pink-500 ring-4 ring-white" />
                           
                           <div className="flex flex-wrap items-baseline justify-between gap-2">
                             <h4 className="text-lg font-black text-[#2D2433]">
@@ -310,7 +321,7 @@ export default function AboutPage() {
 
       {/* Design Philosophy Section */}
       <section className="relative overflow-hidden bg-[#FFFDFC] py-20 sm:py-24 lg:py-28">
-        <div className="absolute left-1/2 top-1/2 -z-10 h-[300px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-100/40 blur-[130px]" />
+        <div className="absolute left-1/2 top-1/2 -z-10 h-75 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-100/40 blur-[130px]" />
 
         <div className="mx-auto w-[92%] max-w-7xl">
           <FadeUp>

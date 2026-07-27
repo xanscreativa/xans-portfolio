@@ -10,8 +10,19 @@ export default function CustomCursor() {
   });
 
   const [hover, setHover] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const updateDesktop = () => setIsDesktop(mediaQuery.matches);
+
+    updateDesktop();
+    mediaQuery.addEventListener("change", updateDesktop);
+
+    if (!mediaQuery.matches) {
+      return () => mediaQuery.removeEventListener("change", updateDesktop);
+    }
+
     const move = (e: MouseEvent) => {
       setPosition({
         x: e.clientX,
@@ -22,26 +33,30 @@ export default function CustomCursor() {
     const enter = () => setHover(true);
     const leave = () => setHover(false);
 
+    const interactiveElements = document.querySelectorAll("a,button");
+
     window.addEventListener("mousemove", move);
 
-    document
-      .querySelectorAll("a,button")
-      .forEach((el) => {
-        el.addEventListener("mouseenter", enter);
-        el.addEventListener("mouseleave", leave);
-      });
+    interactiveElements.forEach((el) => {
+      el.addEventListener("mouseenter", enter);
+      el.addEventListener("mouseleave", leave);
+    });
 
     return () => {
       window.removeEventListener("mousemove", move);
 
-      document
-        .querySelectorAll("a,button")
-        .forEach((el) => {
-          el.removeEventListener("mouseenter", enter);
-          el.removeEventListener("mouseleave", leave);
-        });
+      interactiveElements.forEach((el) => {
+        el.removeEventListener("mouseenter", enter);
+        el.removeEventListener("mouseleave", leave);
+      });
+
+      mediaQuery.removeEventListener("change", updateDesktop);
     };
   }, []);
+
+  if (!isDesktop) {
+    return null;
+  }
 
   return (
     <>

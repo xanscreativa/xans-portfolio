@@ -74,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jakarta.variable} font-sans bg-[#FFFDFC] text-[#2D2433] antialiased`}
+        className={`${jakarta.variable} font-sans bg-[#FFFDFC] text-[#2D2433] antialiased overflow-x-hidden`}
       >
         <PageLoader />
 

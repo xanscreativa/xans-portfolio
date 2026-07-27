@@ -39,13 +39,15 @@ export default function LoadingScreen() {
             transition={{
               duration: 0.8,
             }}
-            className="text-center"
+            className="px-4 text-center"
           >
-            <h1 className="text-6xl font-black tracking-[0.3em] text-[#2D2433]">
+            {/* Teks Logo: text-3xl di mobile, text-6xl di desktop */}
+            <h1 className="text-3xl font-black tracking-[0.2em] text-[#2D2433] sm:text-6xl sm:tracking-[0.3em]">
               XANS
             </h1>
 
-            <p className="mt-4 uppercase tracking-[0.45em] text-pink-500">
+            {/* Subtitle: text-[10px] di mobile, text-sm di desktop */}
+            <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.25em] text-pink-500 sm:mt-3 sm:text-sm sm:tracking-[0.45em]">
               Creative Studio
             </p>
           </motion.div>

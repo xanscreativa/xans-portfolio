@@ -67,24 +67,37 @@ const videoWorks = [
 
 export default function FilmsSection() {
   return (
-    <section id="films" className="relative bg-[#FFFDFC] py-20 sm:py-28">
-      <div className="mx-auto w-[92%] max-w-7xl">
+    <section id="films" className="relative bg-[#FFFDFC] py-14 sm:py-24 lg:py-32">
+      <div className="mx-auto w-[88%] max-w-7xl sm:w-[92%]">
         
-        {/* Section Header */}
-        <div className="mb-12">
-          <p className="text-xs font-bold uppercase tracking-[0.45em] text-pink-500">
+        {/* Section Header - Disesuaikan hierarkinya agar selaras dengan Hero */}
+        <div className="mx-auto mb-8 max-w-3xl text-center sm:mb-12 sm:text-left">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-pink-500 sm:text-xs sm:tracking-[0.45em]">
             PORTFOLIO FILMS
           </p>
-          <h2 className="mt-2 text-3xl font-black text-[#2D2433] sm:text-4xl">
+          <h2 className="mt-0.5 text-2xl font-black leading-tight tracking-tight text-[#2D2433] sm:mt-2 sm:text-4xl lg:text-5xl">
             Selected Video Works
           </h2>
         </div>
 
         {/* Video Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {videoWorks.map((project) => (
-            <VideoCard key={project.id} project={project} />
-          ))}
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {videoWorks.map((project) => {
+            const isGPIB = project.id === "gpib" || project.title.toLowerCase().includes("gpib");
+
+            return (
+              <div
+                key={project.id}
+                className={
+                  isGPIB
+                    ? "md:col-span-2 xl:col-span-2 xl:col-start-2"
+                    : ""
+                }
+              >
+                <VideoCard project={project} />
+              </div>
+            );
+          })}
         </div>
 
       </div>

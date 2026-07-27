@@ -49,7 +49,7 @@ body {
   font-family: var(--font-jakarta), sans-serif;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
-  cursor: none;
+  cursor: auto;
 }
 
 img {
@@ -69,7 +69,7 @@ img {
 
 a,
 button {
-  cursor: none;
+  cursor: auto;
 }
 
 /* =========================

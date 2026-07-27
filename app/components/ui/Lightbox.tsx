@@ -57,13 +57,17 @@ export default function Lightbox({
       {/* Main Lightbox Card */}
       <div className="relative z-10 flex max-h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-3xl bg-[#18151C] border border-white/10 shadow-2xl">
         
-        {/* Top Control Bar */}
-        <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+        {/* Top Control Bar - Hierarki disamakan dengan Hero */}
+        <div className="flex items-center justify-between border-b border-white/15 px-6 py-4">
           <div>
-            <h3 className="text-lg font-bold text-white">{project.title}</h3>
             {project.tags && (
-              <p className="text-xs text-pink-400">{project.tags.join(" • ")}</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-pink-400 sm:tracking-[0.45em] mb-1">
+                {project.tags[0]}
+              </p>
             )}
+            <h3 className="text-lg font-black tracking-tight text-white sm:text-xl">
+              {project.title}
+            </h3>
           </div>
           
           <button
@@ -89,6 +93,7 @@ export default function Lightbox({
                 src={project.thumbnail}
                 alt={project.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 80vw"
                 className="object-contain"
               />
             </div>

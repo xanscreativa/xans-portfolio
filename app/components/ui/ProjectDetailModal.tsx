@@ -24,15 +24,15 @@ export default function ProjectDetailModal({
     }
   }, [isOpen]);
 
-  // Nonaktifkan scroll halaman saat modal terbuka
+  // Nonaktifkan scroll body saat modal terbuka
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "auto";
     }
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
@@ -41,7 +41,7 @@ export default function ProjectDetailModal({
   const isPortrait = project.orientation === "portrait";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-[max(0.75rem,env(safe-area-inset-top))] sm:px-8 lg:px-20">
       {/* Overlay Backdrop */}
       <div
         className="fixed inset-0 bg-black/70 backdrop-blur-md transition-opacity"
@@ -49,23 +49,23 @@ export default function ProjectDetailModal({
       />
 
       {/* Container Modal Pop-up */}
-      <div className="relative z-10 max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-[36px] border border-pink-100/40 bg-white p-6 shadow-2xl sm:p-8 md:p-10">
+      <div className="relative z-10 max-h-[92vh] w-full max-w-full min-w-0 overflow-x-hidden overflow-y-auto rounded-[24px] border border-pink-100/40 bg-white p-4 shadow-2xl sm:rounded-[32px] sm:p-8 lg:max-w-4xl lg:p-12 lg:overflow-visible">
         {/* Tombol Close */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-pink-50 text-[#2D2433] font-bold transition-all hover:bg-pink-500 hover:text-white"
+          className="fixed right-4 top-4 z-20 flex h-10 w-10 min-w-10 items-center justify-center rounded-full bg-pink-50 font-bold text-[#2D2433] transition-all hover:bg-pink-500 hover:text-white lg:absolute lg:right-6 lg:top-6 lg:h-10 lg:w-10"
           aria-label="Close modal"
         >
           ✕
         </button>
 
-        <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
-          {/* SISI KIRI: Video / Media Preview */}
+        <div className="grid min-w-0 gap-4 lg:grid-cols-12 lg:items-start lg:gap-8">
+          {/* SISI KIRI / ATAS: Video / Media Preview (Grid span dikembalikan untuk desktop) */}
           <div
-            className={`overflow-hidden rounded-3xl bg-black ${
+            className={`mb-3 flex min-w-0 items-center justify-center overflow-hidden rounded-2xl bg-black shadow-md lg:mb-0 lg:rounded-3xl ${
               isPortrait
-                ? "lg:col-span-5 aspect-[9/16] max-w-[300px] mx-auto w-full"
-                : "lg:col-span-12 aspect-video w-full"
+                ? "mx-auto aspect-[9/16] w-full max-w-[240px] sm:max-w-[280px] lg:col-span-5 lg:max-w-none lg:w-full"
+                : "mx-auto aspect-video w-full max-w-full lg:col-span-12"
             }`}
           >
             {project.preview ? (
@@ -87,50 +87,52 @@ export default function ProjectDetailModal({
             )}
           </div>
 
-          {/* SISI KANAN: Detail Informasii Project */}
+          {/* SISI KANAN / BAWAH: Detail Informasi Project */}
           <div
-            className={`flex flex-col ${
-              isPortrait ? "lg:col-span-7" : "lg:col-span-12 mt-2"
+            className={`flex min-w-0 flex-col ${
+              isPortrait ? "lg:col-span-7" : "mt-2 lg:col-span-12"
             }`}
           >
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-pink-500">
+            {/* Kategori */}
+            <span className="block text-center text-[10px] font-bold uppercase tracking-[0.2em] text-pink-500 sm:tracking-[0.3em] lg:tracking-[0.45em]">
               {project.category}
             </span>
-            <h2 className="mt-1 text-3xl font-black text-[#2D2433] sm:text-4xl">
+            {/* Judul Utama */}
+            <h2 className="mt-1 text-center break-words text-2xl font-black leading-[1.1] text-[#2D2433] sm:text-3xl lg:text-5xl lg:leading-[1.05]">
               {project.title}
             </h2>
 
             {/* Info Metadata (Client & Role) */}
-            <div className="mt-6 grid grid-cols-2 gap-4 rounded-2xl border border-pink-100/80 bg-pink-50/50 p-4">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
+            <div className="mt-4 flex w-full min-w-0 flex-col gap-3 rounded-2xl border border-pink-100/80 bg-pink-50/50 p-3 sm:mt-5 lg:mt-6 lg:grid lg:grid-cols-2 lg:gap-4 lg:p-4">
+              <div className="min-w-0">
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400 lg:text-[10px] lg:tracking-[0.25em]">
                   Client
                 </p>
-                <p className="text-sm font-bold text-[#2D2433]">
+                <p className="break-words text-xs font-bold text-[#2D2433] lg:text-sm">
                   {project.client || "Personal Project"}
                 </p>
               </div>
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
+              <div className="min-w-0">
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400 lg:text-[10px] lg:tracking-[0.25em]">
                   Role
                 </p>
-                <p className="text-sm font-bold text-[#2D2433]">
+                <p className="break-words text-xs font-bold text-[#2D2433] lg:text-sm">
                   {project.role || "Video Editor"}
                 </p>
               </div>
             </div>
 
-            {/* Deskripsi */}
-            <p className="mt-4 text-sm leading-relaxed text-[#6B6570]">
+            {/* Deskripsi utama */}
+            <p className="mt-4 max-w-prose break-words text-xs leading-relaxed text-[#6B6570] text-justify lg:mt-5 lg:text-sm lg:leading-relaxed">
               {project.description}
             </p>
 
             {/* Badges / Tags */}
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-4 flex min-w-0 flex-wrap justify-center gap-2 lg:mt-5 lg:gap-2.5">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-pink-100/60 px-3 py-1 text-[11px] font-semibold text-pink-700"
+                  className="max-w-full rounded-full bg-pink-100/60 px-3 py-1 text-[10px] font-semibold text-pink-700 lg:text-[11px]"
                 >
                   {tag}
                 </span>
@@ -139,40 +141,40 @@ export default function ProjectDetailModal({
 
             {/* PROSES EDITING & PRODUKSI */}
             {project.process && (
-              <div className="mt-8 border-t border-gray-100 pt-6">
-                <h4 className="text-xs font-extrabold uppercase tracking-widest text-[#2D2433] mb-4">
-                  Creative & Production Process
+              <div className="mt-5 w-full min-w-0 border-t border-gray-100 pt-4 lg:mt-6 lg:pt-5">
+                <h4 className="mb-3 text-center text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#2D2433] lg:mb-4 lg:text-[11px] lg:tracking-[0.3em]">
+                  Creative &amp; Production Process
                 </h4>
 
-                <div className="space-y-3 text-xs">
+                <div className="w-full min-w-0 space-y-2.5 text-xs lg:space-y-3">
                   {project.process.preProduction && (
-                    <div className="rounded-2xl bg-gray-50 p-3.5 border border-gray-100">
-                      <span className="font-bold text-pink-500 block mb-1">
+                    <div className="w-full min-w-0 overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 p-3.5 lg:p-4">
+                      <span className="mb-1 block text-xs font-bold tracking-wider text-pink-500 lg:text-sm">
                         🎬 1. Pre-Production
                       </span>
-                      <p className="text-[#6B6570] leading-relaxed">
+                      <p className="max-w-full overflow-hidden break-words text-xs leading-relaxed text-[#6B6570] text-justify lg:text-sm">
                         {project.process.preProduction}
                       </p>
                     </div>
                   )}
 
                   {project.process.production && (
-                    <div className="rounded-2xl bg-gray-50 p-3.5 border border-gray-100">
-                      <span className="font-bold text-pink-500 block mb-1">
+                    <div className="w-full min-w-0 overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 p-3.5 lg:p-4">
+                      <span className="mb-1 block text-xs font-bold tracking-wider text-pink-500 lg:text-sm">
                         📹 2. Production
                       </span>
-                      <p className="text-[#6B6570] leading-relaxed">
+                      <p className="max-w-full overflow-hidden break-words text-xs leading-relaxed text-[#6B6570] text-justify lg:text-sm">
                         {project.process.production}
                       </p>
                     </div>
                   )}
 
                   {project.process.postProduction && (
-                    <div className="rounded-2xl bg-gray-50 p-3.5 border border-gray-100">
-                      <span className="font-bold text-pink-500 block mb-1">
+                    <div className="w-full min-w-0 overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 p-3.5 lg:p-4">
+                      <span className="mb-1 block text-xs font-bold tracking-wider text-pink-500 lg:text-sm">
                         ✂️ 3. Post-Production
                       </span>
-                      <p className="text-[#6B6570] leading-relaxed">
+                      <p className="max-w-full overflow-hidden break-words text-xs leading-relaxed text-[#6B6570] text-justify lg:text-sm">
                         {project.process.postProduction}
                       </p>
                     </div>
