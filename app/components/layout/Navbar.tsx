@@ -26,6 +26,21 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+<<<<<<< HEAD
+=======
+  // Mencegah scroll pada body saat mobile menu terbuka
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileMenuOpen]);
+
+>>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
@@ -40,7 +55,11 @@ export default function Navbar() {
         // Jika sudah di halaman utama, scroll halus & update URL dengan benar
         e.preventDefault();
         window.history.pushState(null, "", `/#${targetId}`);
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
         const element = document.getElementById(targetId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
@@ -57,6 +76,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
+<<<<<<< HEAD
           ? "bg-white/95 backdrop-blur-md border-b border-pink-100/60 shadow-[0_6px_30px_rgba(229,135,176,0.06)] lg:bg-white/80 lg:py-3 lg:shadow-[0_4px_20px_rgba(229,135,176,0.05)]"
           : "bg-transparent py-6 lg:bg-transparent lg:py-5"
       }`}
@@ -68,6 +88,23 @@ export default function Navbar() {
             XANS
           </span>
           <span className="hidden h-1.5 w-1.5 rounded-full bg-pink-500 lg:block" />
+=======
+          ? "bg-white/90 backdrop-blur-md border-b border-pink-100/60 shadow-[0_4px_20px_rgba(229,135,176,0.08)] py-3 lg:bg-white/80 lg:py-3 lg:shadow-[0_4px_20px_rgba(229,135,176,0.05)]"
+          : "bg-transparent py-4 lg:bg-transparent lg:py-5"
+      }`}
+    >
+      <div className="mx-auto flex w-full max-w-none flex-row items-center justify-between px-4 sm:px-6 lg:w-[92%] lg:max-w-7xl lg:flex-row lg:items-center lg:justify-between lg:px-0">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="group flex items-center gap-2"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <span className="text-xl sm:text-2xl font-black tracking-widest text-[#2D2433] transition-colors group-hover:text-pink-500 lg:text-xl">
+            XANS
+          </span>
+          <span className="h-1.5 w-1.5 rounded-full bg-pink-500 lg:block" />
+>>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -108,6 +145,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+<<<<<<< HEAD
           className="flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 lg:hidden shadow-sm"
           aria-label="Toggle Menu"
         >
@@ -116,21 +154,57 @@ export default function Navbar() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             ) : (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+=======
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-pink-50 text-pink-600 lg:hidden shadow-xs active:scale-95 transition-transform"
+          aria-label="Toggle Menu"
+        >
+          <svg
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {mobileMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M4 7h16M4 12h16M4 17h16"
+              />
+>>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
             )}
           </svg>
         </button>
       </div>
 
+<<<<<<< HEAD
       {/* Mobile Dropdown */}
       {mobileMenuOpen && (
         <div className="absolute inset-x-0 top-full z-40 lg:hidden">
           <div className="mx-auto w-full max-w-3xl bg-white/100 p-6 pt-8 shadow-2xl backdrop-blur-xl">
             <div className="flex flex-col items-stretch gap-6">
               {navLinks.map((link) => (
+=======
+      {/* Mobile Drawer Overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-x-0 top-[61px] bottom-0 z-40 flex flex-col justify-between overflow-y-auto border-t border-pink-100/50 bg-white/95 p-6 backdrop-blur-2xl lg:hidden">
+          <div className="flex flex-col items-stretch gap-3 pt-2">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+>>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
+<<<<<<< HEAD
                   className="w-full rounded-lg px-5 py-4 text-lg font-bold uppercase tracking-wide text-[#2D2433] hover:text-pink-500 transition-colors"
                 >
                   {link.name}
@@ -145,6 +219,31 @@ export default function Navbar() {
                 Connect
               </Link>
             </div>
+=======
+                  className={`flex items-center justify-between rounded-2xl px-6 py-4 text-base font-bold uppercase tracking-wider transition-all ${
+                    isActive
+                      ? "bg-pink-50/80 text-pink-600"
+                      : "text-[#2D2433] hover:bg-gray-50 active:bg-pink-50/50"
+                  }`}
+                >
+                  <span>{link.name}</span>
+                  {isActive && (
+                    <span className="h-2 w-2 rounded-full bg-pink-500" />
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="pt-6 pb-4">
+            <Link
+              href="/#contact"
+              onClick={(e) => handleNavClick(e, "/#contact")}
+              className="flex w-full items-center justify-center rounded-full bg-pink-500 py-4 text-center text-sm font-bold uppercase tracking-widest text-white shadow-[0_12px_30px_rgba(236,72,153,0.25)] active:scale-[0.98] transition-transform"
+            >
+              Connect
+            </Link>
+>>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
           </div>
         </div>
       )}
