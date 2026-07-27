@@ -26,7 +26,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Mencegah scroll pada body saat mobile menu terbuka
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -44,12 +43,10 @@ export default function Navbar() {
   ) => {
     setMobileMenuOpen(false);
 
-    // Jika target adalah anchor di halaman utama
     if (href.startsWith("/#")) {
       const targetId = href.replace("/#", "");
 
       if (pathname === "/") {
-        // Jika sudah di halaman utama, scroll halus & update URL dengan benar
         e.preventDefault();
         window.history.pushState(null, "", `/#${targetId}`);
 
@@ -58,7 +55,6 @@ export default function Navbar() {
           element.scrollIntoView({ behavior: "smooth" });
         }
       } else {
-        // Jika sedang di halaman lain (misal /about), pindah ke homepage lalu scroll
         e.preventDefault();
         router.push(`/#${targetId}`);
       }
@@ -69,21 +65,21 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-pink-100/60 shadow-[0_4px_20px_rgba(229,135,176,0.08)] py-3 lg:bg-white/80 lg:py-3 lg:shadow-[0_4px_20px_rgba(229,135,176,0.05)]"
-          : "bg-transparent py-4 lg:bg-transparent lg:py-5"
+          ? "bg-white/90 backdrop-blur-md border-b border-pink-100/60 shadow-[0_4px_20px_rgba(229,135,176,0.08)] py-3"
+          : "bg-white/80 backdrop-blur-sm py-4 lg:bg-transparent lg:py-5"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-none flex-row items-center justify-between px-4 sm:px-6 lg:w-[92%] lg:max-w-7xl lg:flex-row lg:items-center lg:justify-between lg:px-0">
-        {/* Logo */}
+      <div className="mx-auto flex w-full max-w-none flex-row items-center justify-between px-4 sm:px-6 lg:w-[92%] lg:max-w-7xl lg:px-0">
+        {/* Single Logo Component */}
         <Link
           href="/"
-          className="group flex items-center gap-2"
+          className="group flex items-center gap-1.5 z-10"
           onClick={() => setMobileMenuOpen(false)}
         >
-          <span className="text-xl sm:text-2xl font-black tracking-widest text-[#2D2433] transition-colors group-hover:text-pink-500 lg:text-xl">
+          <span className="text-xl sm:text-2xl font-black tracking-widest text-[#2D2433] transition-colors group-hover:text-pink-500">
             XANS
           </span>
-          <span className="h-1.5 w-1.5 rounded-full bg-pink-500 lg:block" />
+          <span className="h-2 w-2 rounded-full bg-pink-500 inline-block" />
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -124,7 +120,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-pink-50 text-pink-600 lg:hidden shadow-xs active:scale-95 transition-transform"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-pink-50 text-pink-600 lg:hidden shadow-xs active:scale-95 transition-transform z-10"
           aria-label="Toggle Menu"
         >
           <svg
