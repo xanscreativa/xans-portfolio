@@ -66,7 +66,7 @@ function FeaturedMedia({
 
       <button
         onClick={onOpenModal}
-        className="absolute right-10 top-10 flex h-14 w-14 items-center justify-center rounded-full bg-white text-pink-500 font-bold shadow-lg transition hover:scale-110 active:scale-95"
+        className="absolute right-4 top-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-pink-500 font-bold shadow-lg transition hover:scale-110 active:scale-95 sm:right-10 sm:top-10"
         aria-label="Play Featured Video"
       >
         ▶
@@ -108,31 +108,33 @@ export default function CreativeFilms() {
   };
 
   return (
-    <section className="relative overflow-hidden py-32 bg-[#FFFDFC]">
+    <section className="relative overflow-hidden py-20 sm:py-32 bg-[#FFFDFC]">
       {/* Background Glow */}
       <div className="absolute left-1/2 top-32 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-pink-200/30 blur-[120px]" />
 
       <div className="mx-auto w-[92%] max-w-7xl">
         {/* HEADER SECTION */}
         <FadeUp>
-          <p className="text-sm uppercase tracking-[0.35em] text-pink-500">
-            SHOWREEL
-          </p>
+          <div className="text-center sm:text-left">
+            <p className="text-sm uppercase tracking-[0.35em] text-pink-500">
+              SHOWREEL
+            </p>
 
-          <h2 className="mt-5 max-w-3xl text-5xl font-black leading-tight text-[#2D2433]">
-            Every frame is crafted to tell a story.
-          </h2>
+            <h2 className="mt-5 mx-auto max-w-3xl text-5xl font-black leading-tight text-[#2D2433] sm:mx-0">
+              Every frame is crafted to tell a story.
+            </h2>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#6B6570]">
-            A curated collection of video editing, motion graphics, AI-assisted
-            visuals, and creative storytelling.
-          </p>
+            <p className="mt-6 mx-auto max-w-2xl text-lg leading-8 text-[#6B6570] sm:mx-0">
+              A curated collection of video editing, motion graphics, AI-assisted
+              visuals, and creative storytelling.
+            </p>
+          </div>
         </FadeUp>
 
         {/* FEATURED BANNER ATAS */}
         <FadeUp delay={0.15}>
-          <div className="mt-16 grid items-center gap-16 lg:grid-cols-[380px_minmax(0,1fr)]">
-            <div className="mx-auto w-full max-w-[380px]">
+          <div className="mt-12 grid items-center gap-10 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-16">
+            <div className="mx-auto w-full max-w-[380px] sm:max-w-[400px]">
               <div className="absolute inset-0 rounded-[60px] bg-pink-200 blur-[80px] opacity-30" />
 
               <div className="group relative rounded-[48px] border border-pink-100 bg-white p-4 shadow-[0_40px_90px_rgba(0,0,0,.08)] transition-all duration-600 hover:-translate-y-1.5 hover:shadow-[0_50px_100px_rgba(233,106,152,0.15)]">
@@ -144,7 +146,7 @@ export default function CreativeFilms() {
             </div>
 
             <div>
-              <div className="rounded-[36px] border border-pink-100 bg-white p-10 shadow-xl">
+              <div className="rounded-[36px] border border-pink-100 bg-white p-6 sm:p-10 shadow-xl text-center sm:text-left">
                 <p className="text-xs uppercase tracking-[0.3em] text-pink-500 font-bold">
                   Featured Project
                 </p>
@@ -157,7 +159,7 @@ export default function CreativeFilms() {
                   {featured.description}
                 </p>
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-8 flex flex-wrap justify-center gap-3 sm:justify-start">
                   {featured.tags.map((tag) => (
                     <span
                       key={tag}
@@ -168,7 +170,7 @@ export default function CreativeFilms() {
                   ))}
                 </div>
 
-<div className="mt-10 flex flex-wrap gap-3">
+                <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
   <button
     onClick={() => handleOpenModal(featured)}
     className="inline-flex items-center justify-center rounded-full bg-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-pink-600 active:scale-95"
@@ -195,7 +197,7 @@ export default function CreativeFilms() {
               </h3>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+            <div className="grid gap-8 sm:gap-10 md:grid-cols-2 xl:grid-cols-4">
               {films.map((film, index) => {
                 // Deteksi apakah item ini adalah GPIB Immanuel Pekanbaru
                 const isGPIB =

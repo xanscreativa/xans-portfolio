@@ -8,23 +8,23 @@ export default function PortfolioGallery() {
   return (
     <section
       id="portfolio"
-      className="relative overflow-hidden border-t border-[#F0E6EA] bg-[#FFFDFC] py-20 sm:py-28 lg:py-32"
+      className="relative overflow-hidden border-t border-[#F0E6EA] bg-[#FFFDFC] py-16 sm:py-28 lg:py-32"
     >
       {/* Background Soft Glow */}
       <div className="pointer-events-none absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-pink-100/30 blur-[150px]" />
       <div className="pointer-events-none absolute -left-40 bottom-10 h-96 w-96 rounded-full bg-pink-100/20 blur-[150px]" />
 
-      <div className="relative mx-auto w-[92%] max-w-7xl">
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:w-[92%] sm:px-0">
         {/* HEADER SECTION */}
         <FadeUp>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.45em] text-pink-500">
               SELECTED WORK
             </p>
-            <h2 className="mt-3 text-3xl font-black leading-tight text-[#2D2433] sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 mx-auto max-w-xl text-3xl font-black leading-tight text-[#2D2433] sm:mx-0 sm:max-w-3xl sm:text-4xl lg:text-5xl">
               Creative work across multiple design disciplines.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[#6B6570] sm:text-base sm:leading-7">
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[#6B6570] sm:mx-0 sm:max-w-2xl sm:text-base sm:leading-7">
               A curated portfolio showcasing my experience in thumbnail design,
               character design, live streaming, social media, logo design, and
               poster design.

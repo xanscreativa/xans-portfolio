@@ -146,7 +146,7 @@ export default function Hero() {
         <div className="relative z-10 mx-auto grid w-[92%] max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-8">
           
           {/* Left Column: Hero Content */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 text-center sm:text-left">
             <FadeUp delay={0}>
               <div className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/90 px-4 py-1.5 shadow-xs backdrop-blur-sm">
                 <span className="h-2 w-2 rounded-full bg-pink-500 animate-pulse" />
@@ -168,13 +168,13 @@ export default function Hero() {
             </FadeUp>
 
             <FadeUp delay={0.24}>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-[#6B6570] sm:text-lg sm:leading-8">
+              <p className="mt-6 mx-auto max-w-xl text-sm leading-6 text-[#6B6570] sm:mx-0 sm:text-lg sm:leading-8">
                 Crafting thoughtful visual experiences through branding, motion design, editorial storytelling, and digital content.
               </p>
             </FadeUp>
 
             <FadeUp delay={0.32}>
-              <div className="mt-6 flex flex-wrap gap-2.5">
+              <div className="mt-6 flex flex-wrap justify-center gap-2.5 sm:justify-start">
                 {["Brand Identity", "Graphic Design", "Video Editing"].map((tag) => (
                   <span key={tag} className="rounded-full border border-pink-100 bg-pink-50/80 px-4 py-1.5 text-xs font-medium text-pink-600">
                     {tag}
@@ -184,7 +184,7 @@ export default function Hero() {
             </FadeUp>
 
             <FadeUp delay={0.4}>
-              <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+              <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:items-center sm:justify-start">
                 <Button href="#portfolio">View Portfolio</Button>
                 <Button href="#films" variant="secondary">Watch Showreel</Button>
               </div>
@@ -257,7 +257,7 @@ export default function Hero() {
 
               {/* Brush Image dibuat sangat transparan & samar di latar paling belakang */}
               <FadeUp delay={0.64}>
-                <div className="pointer-events-none absolute -right-6 -top-10 -z-10 w-[100%] select-none opacity-20 blur-[2px]">
+                <div className="pointer-events-none absolute -right-6 -top-10 -z-10 w-[100%] max-w-[520px] select-none opacity-20 blur-[2px] sm:-right-4 sm:-top-8">
                   <Image
                     src="/hero/brush.png"
                     alt=""
@@ -270,7 +270,7 @@ export default function Hero() {
 
               {/* Flowers Layer */}
               <FadeUp delay={0.60}>
-                <div className="pointer-events-none absolute -right-8 -top-12 -z-10 w-[105%] select-none">
+                <div className="pointer-events-none absolute -right-8 -top-12 -z-10 w-[105%] max-w-[550px] select-none sm:-right-6 sm:-top-10">
                   <motion.div
                     animate={{ rotate: [-0.8, 0.8, -0.8] }}
                     transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
@@ -291,7 +291,7 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative z-10"
+                  className="relative z-10 mx-auto w-full max-w-[340px] sm:max-w-none"
                 >
                   <Image
                     src="/hero/profile.png"
@@ -309,7 +309,7 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [0, -4, 0] }}
                   transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute bottom-4 right-2 z-20 w-[250px] rounded-2xl border border-white/80 bg-white/85 p-4 shadow-[0_15px_30px_rgba(0,0,0,0.06)] backdrop-blur-md sm:bottom-6 sm:right-0 sm:w-[280px]"
+                  className="absolute bottom-4 left-1/2 right-auto z-20 w-[250px] max-w-[calc(100%-1rem)] -translate-x-1/2 rounded-2xl border border-white/80 bg-white/85 p-4 shadow-[0_15px_30px_rgba(0,0,0,0.06)] backdrop-blur-md sm:bottom-6 sm:left-auto sm:right-0 sm:translate-x-0 sm:w-[280px]"
                 >
                   <p className="text-sm font-medium leading-snug text-[#6B6570]">
                     <span className="text-xl font-bold text-pink-500">“</span>
