@@ -77,22 +77,38 @@ export default function AboutPage() {
   return (
     <main className="bg-[#FFFDFC] text-[#2D2433]">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+      <section className="relative overflow-hidden bg-white py-12 sm:py-20 lg:py-28">
         <div className="absolute -left-16 top-16 h-80 w-80 rounded-full bg-pink-100 blur-[120px] opacity-20" />
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-pink-200/20 blur-[140px] opacity-30" />
 
         <div className="relative mx-auto w-[92%] max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
             
-            {/* Left Content */}
-            <div className="lg:col-span-7">
+            {/* Profile Image (Urutan 1 di Mobile, Urutan 2/Kanan di Desktop) */}
+            <div className="order-1 w-full lg:order-2 lg:col-span-5 mb-8 lg:mb-0">
+              <FadeUp>
+                <div className="relative overflow-hidden rounded-[32px] border border-pink-100/80 bg-white p-3 shadow-[0_20px_60px_rgba(229,135,176,.1)]">
+                  <Image
+                    src="/hero/profile.png"
+                    alt="Portrait of Xandra"
+                    width={800}
+                    height={950}
+                    className="h-[380px] w-full rounded-[26px] object-cover object-top sm:h-[480px] lg:h-[540px]"
+                    priority
+                  />
+                </div>
+              </FadeUp>
+            </div>
+
+            {/* Hero Text & Actions (Urutan 2 di Mobile, Urutan 1/Kiri di Desktop) */}
+            <div className="order-2 w-full lg:order-1 lg:col-span-7">
               <FadeUp>
                 <div className="max-w-2xl">
                   <p className="text-xs font-semibold uppercase tracking-[0.4em] text-pink-500">
                     ABOUT ME
                   </p>
                   
-                  <h1 className="mt-4 text-4xl font-black leading-[1.15] tracking-tight text-[#2D2433] sm:text-5xl lg:text-6xl">
+                  <h1 className="mt-4 text-3xl font-black leading-[1.15] tracking-tight text-[#2D2433] sm:text-5xl lg:text-6xl">
                     Designing Visual Stories With Purpose.
                   </h1>
                   
@@ -111,22 +127,6 @@ export default function AboutPage() {
                       Let&apos;s Connect
                     </Button>
                   </div>
-                </div>
-              </FadeUp>
-            </div>
-
-            {/* Right Profile Image */}
-            <div className="lg:col-span-5">
-              <FadeUp>
-                <div className="relative overflow-hidden rounded-[32px] border border-pink-100/80 bg-white p-3 shadow-[0_20px_60px_rgba(229,135,176,.1)]">
-                  <Image
-                    src="/hero/profile.png"
-                    alt="Portrait of Xandra"
-                    width={800}
-                    height={950}
-                    className="h-[480px] w-full rounded-[26px] object-cover object-top sm:h-[540px]"
-                    priority
-                  />
                 </div>
               </FadeUp>
             </div>
