@@ -36,7 +36,7 @@ export default function Hero() {
         <div className="flex flex-col items-center text-center lg:grid lg:grid-cols-12 lg:items-center lg:gap-8 lg:text-left">
           
           {/* Visual Profile (Mobile di Atas) */}
-          <div className="relative w-full max-w-[260px] sm:max-w-sm lg:max-w-none lg:order-2 lg:col-span-5 pt-2 sm:pt-4 mb-1 lg:mb-0">
+          <div className="relative w-full max-w-[260px] sm:max-w-sm lg:max-w-none lg:order-2 lg:col-span-5 pt-6 sm:pt-10 lg:pt-0 mb-1 lg:mb-0">
             <div className="relative mx-auto">
               {/* Soft Pink Glow */}
               <div className="pointer-events-none absolute left-1/2 top-1/2 -z-20 h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-pink-300/40 via-pink-200/30 to-transparent blur-[45px] sm:h-[380px] sm:w-[380px] sm:blur-[70px]" />
@@ -108,11 +108,12 @@ export default function Hero() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="absolute bottom-1 left-[-6px] z-20 w-[78%] max-w-[145px] rounded-xl border border-white/80 bg-white/90 p-2.5 shadow-sm backdrop-blur-md sm:bottom-10 sm:left-[-16px] sm:max-w-[210px] sm:p-4"
+                  className="absolute bottom-1 left-[-6px] z-25 w-[88%] max-w-[175px] rounded-xl border border-white/80 bg-white/95 p-2.5 shadow-md backdrop-blur-md sm:bottom-10 sm:left-[-16px] sm:max-w-[240px] sm:p-4"
                 >
-                  <p className="text-[10px] font-medium leading-snug text-[#6B6570] sm:text-xs sm:leading-relaxed">
+                  <p className="text-[10px] font-medium leading-relaxed text-[#6B6570] sm:text-xs sm:leading-relaxed">
                     <span className="text-[11px] font-bold text-pink-500 sm:text-sm">“</span>
-                    Thoughtfully Crafted. Beautifully Remembered.
+                    Thoughtfully Crafted.<br />
+                    Beautifully Remembered.
                     <span className="text-[11px] font-bold text-pink-500 sm:text-sm">”</span>
                   </p>
                 </motion.div>
@@ -191,7 +192,7 @@ export default function Hero() {
               </div>
             </FadeUp>
 
-            {/* Stats Grid - Jarak atas diperkecil */}
+            {/* Stats Grid */}
             <FadeUp delay={0.48}>
               <div className="mt-3 w-full grid grid-cols-4 gap-2 sm:mt-5 sm:gap-4 px-1 sm:px-0">
                 {[
