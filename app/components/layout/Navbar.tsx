@@ -57,21 +57,21 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-md border-b border-pink-100/60 py-3 shadow-[0_4px_20px_rgba(229,135,176,0.05)]"
-          : "bg-transparent py-5"
+          ? "bg-white/95 backdrop-blur-md border-b border-pink-100/60 shadow-[0_6px_30px_rgba(229,135,176,0.06)] lg:bg-white/80 lg:py-3 lg:shadow-[0_4px_20px_rgba(229,135,176,0.05)]"
+          : "bg-transparent py-6 lg:bg-transparent lg:py-5"
       }`}
     >
-      <div className="mx-auto flex w-[92%] max-w-7xl items-center justify-between">
+      <div className="mx-auto flex w-full max-w-none flex-col items-center gap-3 px-6 lg:w-[92%] lg:max-w-7xl lg:flex-row lg:items-center lg:justify-between lg:px-0">
         {/* Logo */}
-        <Link href="/" className="group flex items-center gap-1">
-          <span className="text-xl font-black tracking-widest text-[#2D2433] transition-colors group-hover:text-pink-500">
+        <Link href="/" className="group flex items-center gap-2">
+          <span className="text-2xl font-black tracking-widest text-[#2D2433] transition-colors group-hover:text-pink-500 lg:text-xl">
             XANS
           </span>
-          <span className="h-1.5 w-1.5 rounded-full bg-pink-500" />
+          <span className="hidden h-1.5 w-1.5 rounded-full bg-pink-500 lg:block" />
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden items-center gap-1 rounded-full border border-pink-100/80 bg-white/70 px-4 py-1.5 shadow-xs backdrop-blur-md md:flex">
+        <nav className="hidden items-center gap-1 rounded-full border border-pink-100/80 bg-white/70 px-4 py-1.5 shadow-xs backdrop-blur-md lg:flex">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -95,7 +95,7 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTA Button */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "/#contact")}
@@ -108,7 +108,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-50 text-pink-600 md:hidden"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 lg:hidden shadow-sm"
           aria-label="Toggle Menu"
         >
           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -123,25 +123,28 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 border-b border-pink-100 bg-white/95 p-6 shadow-xl backdrop-blur-xl md:hidden">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
+        <div className="absolute inset-x-0 top-full z-40 lg:hidden">
+          <div className="mx-auto w-full max-w-3xl bg-white/100 p-6 pt-8 shadow-2xl backdrop-blur-xl">
+            <div className="flex flex-col items-stretch gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="w-full rounded-lg px-5 py-4 text-lg font-bold uppercase tracking-wide text-[#2D2433] hover:text-pink-500 transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+
               <Link
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-bold uppercase tracking-wider text-[#2D2433] hover:text-pink-500"
+                href="/#contact"
+                onClick={(e) => handleNavClick(e, "/#contact")}
+                className="mt-1 w-full rounded-lg bg-pink-500 px-6 py-4 text-center text-sm font-bold uppercase tracking-wider text-white shadow-[0_12px_30px_rgba(236,72,153,0.18)] transition-transform hover:-translate-y-0.5"
               >
-                {link.name}
+                Connect
               </Link>
-            ))}
-            <Link
-              href="/#contact"
-              onClick={(e) => handleNavClick(e, "/#contact")}
-              className="mt-2 text-center rounded-full bg-pink-500 py-3 text-xs font-bold uppercase tracking-wider text-white"
-            >
-              Connect
-            </Link>
+            </div>
           </div>
         </div>
       )}
