@@ -78,7 +78,7 @@ function ProjectCard({
       <div className="overflow-hidden">
 
         <Image
-          src={project.cover}
+          src={project.cover ?? "/"}
           alt={project.title}
           width={1200}
           height={800}

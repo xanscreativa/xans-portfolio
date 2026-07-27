@@ -36,6 +36,9 @@ const item = {
 
 export default function WorkGallery({ project }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const galleryItems = (project.gallery ?? []).map((image) =>
+    typeof image === "string" ? { url: image } : image
+  );
 
   return (
     <>
@@ -59,7 +62,7 @@ export default function WorkGallery({ project }: Props) {
             }}
             className="mt-8 sm:mt-16 columns-1 gap-4 sm:gap-6 md:columns-2"
           >
-            {project.gallery.map((image, index) => (
+            {galleryItems.map((image, index) => (
               <motion.div
                 key={index}
                 variants={item}
@@ -90,21 +93,21 @@ export default function WorkGallery({ project }: Props) {
       </section>
 
       <Lightbox
-        images={project.gallery.map((img) => img.url)}
+        images={galleryItems.map((img) => img.url)}
         currentIndex={activeIndex ?? 0}
         isOpen={activeIndex !== null}
         title={project.title}
         onClose={() => setActiveIndex(null)}
         onNext={() =>
           setActiveIndex((prev) =>
-            prev === null ? 0 : (prev + 1) % project.gallery.length
+            prev === null ? 0 : (prev + 1) % galleryItems.length
           )
         }
         onPrev={() =>
           setActiveIndex((prev) =>
             prev === null
               ? 0
-              : (prev - 1 + project.gallery.length) % project.gallery.length
+              : (prev - 1 + galleryItems.length) % galleryItems.length
           )
         }
       />

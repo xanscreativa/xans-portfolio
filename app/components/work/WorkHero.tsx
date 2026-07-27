@@ -66,7 +66,7 @@ export default function WorkHero({ project }: Props) {
         <div className="mt-20 overflow-hidden rounded-[40px] shadow-[0_40px_80px_rgba(0,0,0,.12)]">
 
           <Image
-            src={project.hero}
+            src={project.hero ?? project.cover ?? "/"}
             alt={project.title}
             width={1600}
             height={900}

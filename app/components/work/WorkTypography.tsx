@@ -29,7 +29,9 @@ export default function WorkTypography({ project }: Props) {
             </p>
 
             <h3 className="mt-6 text-5xl font-black text-[#2D2433]">
-              {project.typography}
+              {typeof project.typography === "string"
+                ? project.typography
+                : project.typography?.fontFamily}
             </h3>
 
             <div className="mt-10 space-y-6">

@@ -22,7 +22,7 @@ export default function WorkResult({
 
         <div className="mt-16 grid gap-6 md:grid-cols-2">
 
-          {project.result.map((item) => (
+          {project.result?.map((item) => (
 
             <div
               key={item}

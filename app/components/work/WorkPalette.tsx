@@ -29,7 +29,7 @@ export default function WorkPalette({ project }: Props) {
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
 
-          {project.colors.map((color, index) => (
+          {project.colors?.map((color, index) => (
 
             <button
               key={color}

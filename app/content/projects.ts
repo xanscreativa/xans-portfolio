@@ -2,22 +2,17 @@ import { Project } from "../types/project";
 
 export const projects: Project[] = [
   {
-    id: 1,
+    id: "1",
     slug: "ez-squad",
 
     title: "EZ Squad",
 
     subtitle: "Motion graphics & trading campaign",
 
-    description:
-      "Designed livestream layouts, promotional posters, and motion graphics for a premium trading community.",
-
     category: "Motion Design",
 
     cover: "/portfolio/ezsquad.jpg",
     hero: "/portfolio/ezsquad.jpg",
-
-    featured: true,
 
     client: "EZ Squad",
 
@@ -71,22 +66,17 @@ export const projects: Project[] = [
   },
 
   {
-    id: 2,
+    id: "2",
     slug: "jendela-finansial",
 
     title: "Jendela Finansial",
 
     subtitle: "Brand identity & educational content",
 
-    description:
-      "Designed a complete visual identity including mascot characters, educational social media content, and YouTube assets.",
-
     category: "Brand Identity",
 
     cover: "/portfolio/jendela-finansial.jpg",
     hero: "/portfolio/jendela-finansial.jpg",
-
-    featured: true,
 
     client: "Jendela Finansial",
 

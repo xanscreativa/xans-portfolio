@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+import { useState, useRef, useEffect } from "react";
 import FadeUp from "../animation/FadeUp";
 import VideoLightbox, { FilmItem } from "./VideoLightbox";
 

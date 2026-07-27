@@ -81,36 +81,17 @@ export default function WorkSidebar({
 
         <div className="p-8">
 
-          <Info
-            title="Client"
-            value={project.client}
-          />
+          <Info title="Client" value={project.client ?? "—"} />
 
-          <Info
-            title="Year"
-            value={project.year}
-          />
+          <Info title="Year" value={project.year ?? "—"} />
 
-          <Info
-            title="Duration"
-            value={project.duration}
-          />
+          <Info title="Duration" value={project.duration ?? "—"} />
 
-          <Info
-            title="Role"
-            value={project.role}
-          />
+          <Info title="Role" value={project.role ?? "—"} />
 
-          <Tags
-            title="Software"
-            items={project.software}
-            filled
-          />
+          <Tags title="Software" items={project.software ?? []} filled />
 
-          <Tags
-            title="Services"
-            items={project.services}
-          />
+          <Tags title="Services" items={project.services ?? []} />
 
         </div>
 

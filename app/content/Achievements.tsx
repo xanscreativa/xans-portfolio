@@ -26,7 +26,7 @@ export default function Achievements() {
         </p>
 
         <h2 className="mt-4 text-center text-5xl font-black text-[#2D2433]">
-          Milestones I'm Proud Of
+          Milestones I&apos;m Proud Of
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-center text-[#6B6570]">

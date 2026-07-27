@@ -23,10 +23,6 @@ const fadeRise = {
 };
 
 export default function ProjectDetailGallery({ project }: Props) {
-  if (!project.items.length) {
-    return null;
-  }
-
   // Semua gambar dijadikan satu flat array untuk Lightbox
   const allImages = useMemo(
     () => project.items.flatMap((item) => item.images),
@@ -35,6 +31,10 @@ export default function ProjectDetailGallery({ project }: Props) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  if (!project.items.length) {
+    return null;
+  }
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);

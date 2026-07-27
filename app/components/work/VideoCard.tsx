@@ -3,7 +3,22 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 
-export default function VideoCard({ project }: { project: any }) {
+type VideoCardProject = {
+  videoSrc?: string;
+  preview?: string;
+  projectUrl?: string;
+  href?: string;
+  playlistUrl?: string;
+  playlist?: string;
+  orientation?: string;
+  duration?: string;
+  category?: string;
+  title?: string;
+  description?: string;
+  tags?: string[];
+};
+
+export default function VideoCard({ project }: { project: VideoCardProject }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
