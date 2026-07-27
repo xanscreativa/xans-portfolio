@@ -30,36 +30,38 @@ export default function PageLoader() {
           className="fixed inset-0 z-[99999] flex items-center justify-center bg-[#FFFDFB]"
         >
           <div className="text-center">
-            <motion.h1
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.8,
-              }}
-              className="text-7xl font-black tracking-[0.25em] text-[#2D2433]"
-            >
-              XANS
-            </motion.h1>
+            <div className="inline-block">
+              <motion.h1
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.8,
+                }}
+                className="text-2xl sm:text-7xl font-black tracking-[0.25em] text-[#2D2433] pl-[0.25em]"
+              >
+                XANS
+              </motion.h1>
 
-            <motion.div
-              initial={{
-                scaleX: 0,
-              }}
-              animate={{
-                scaleX: 1,
-              }}
-              transition={{
-                delay: 0.4,
-                duration: 1,
-              }}
-              className="mx-auto mt-8 h-[3px] w-44 origin-left rounded-full bg-[#E85D8E]"
-            />
+              <motion.div
+                initial={{
+                  scaleX: 0,
+                }}
+                animate={{
+                  scaleX: 1,
+                }}
+                transition={{
+                  delay: 0.4,
+                  duration: 1,
+                }}
+                className="mt-4 sm:mt-8 h-[3px] w-full origin-center rounded-full bg-[#E85D8E]"
+              />
+            </div>
           </div>
         </motion.div>
       )}

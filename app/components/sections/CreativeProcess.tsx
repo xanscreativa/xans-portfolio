@@ -1,3 +1,5 @@
+"use client";
+
 import FadeUp from "../animation/FadeUp";
 
 const processSteps = [
@@ -41,49 +43,51 @@ const processSteps = [
 
 export default function HowIWork() {
   return (
-    <section className="relative overflow-hidden bg-[#FFF8F9] pb-8 pt-10 sm:py-24 lg:py-32">
-      <div className="relative mx-auto w-[88%] max-w-7xl sm:w-[92%]">
+    <section className="relative overflow-hidden bg-[#FFF8F9] py-12 sm:py-20">
+      <div className="relative mx-auto w-[88%] max-w-3xl sm:w-[92%]">
         <FadeUp>
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-xl text-center">
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-pink-500 sm:text-xs sm:tracking-[0.45em]">
               Creative Process
             </p>
 
-            <h2 className="mt-1.5 text-xl font-black leading-snug text-[#2D2433] sm:mt-3 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-1 text-xl font-black leading-snug text-[#2D2433] sm:mt-2 sm:text-4xl">
               How I Work
             </h2>
 
-            <p className="mx-auto mt-2 max-w-2xl text-xs leading-relaxed text-[#6B6570] sm:mt-4 sm:text-base sm:leading-relaxed">
-              Every project follows a structured creative workflow to ensure every
-              design is meaningful, strategic, and visually impactful.
+            <p className="mx-auto mt-1.5 max-w-lg text-xs leading-relaxed text-[#6B6570] sm:mt-3 sm:text-sm">
+              Every project follows a structured creative workflow to ensure every design is meaningful, strategic, and visually impactful.
             </p>
           </div>
         </FadeUp>
 
-        {/* Grid Card Ringkas & Presisi */}
-        <div className="mt-5 grid gap-2.5 sm:mt-12 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-          {processSteps.map((step, index) => (
-            <FadeUp key={step.number} delay={index * 0.05}>
-              <div className="group relative flex h-full flex-col justify-between rounded-xl border border-pink-100 bg-white p-4 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-pink-300 hover:shadow-md sm:rounded-2xl sm:p-6">
-                <div>
-                  <span className="text-xl font-black tracking-tight text-pink-500 transition-colors duration-300 group-hover:text-pink-600 sm:text-3xl">
+        {/* Compact Vertical Process Flow (Uniform for Mobile & Desktop) */}
+        <div className="mt-8 sm:mt-12 relative">
+          {/* Vertical connecting line */}
+          <div className="absolute left-6 sm:left-8 top-6 bottom-6 w-0.5 bg-pink-200/80" />
+
+          <div className="space-y-6 sm:space-y-8">
+            {processSteps.map((step, index) => (
+              <FadeUp key={step.number} delay={index * 0.05}>
+                <div className="relative flex items-start gap-4 sm:gap-6">
+                  {/* Soft Pink Circle with Number */}
+                  <div className="relative z-10 flex h-12 w-12 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full bg-pink-50/90 border border-pink-200/80 shadow-[0_4px_12px_rgba(236,72,153,0.1)] text-pink-500 font-black text-sm sm:text-lg">
                     {step.number}
-                  </span>
+                  </div>
 
-                  <h3 className="mt-2 text-sm font-bold text-[#2D2433] sm:mt-4 sm:text-xl">
-                    {step.title}
-                  </h3>
-
-                  <p className="mt-1 text-[11px] leading-relaxed text-[#6B6570] sm:mt-2 sm:text-sm sm:leading-relaxed">
-                    {step.description}
-                  </p>
+                  {/* Content Card */}
+                  <div className="flex-1 bg-white border border-pink-100 rounded-xl p-4 sm:p-5 shadow-xs transition-all duration-300 hover:border-pink-300 hover:shadow-sm group">
+                    <h3 className="text-xs sm:text-base font-bold text-[#2D2433] group-hover:text-pink-500 transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="mt-1 text-[11px] sm:text-xs leading-relaxed text-[#6B6570]">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-
-                {/* Aksesoris Garis Dekoratif Kecil di Bawah Card */}
-                <div className="mt-4 h-0.5 w-8 rounded-full bg-pink-100 transition-all duration-300 group-hover:w-full group-hover:bg-pink-400 sm:mt-6 sm:h-1 sm:w-12" />
-              </div>
-            </FadeUp>
-          ))}
+              </FadeUp>
+            ))}
+          </div>
         </div>
       </div>
     </section>

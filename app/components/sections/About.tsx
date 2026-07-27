@@ -62,7 +62,7 @@ export default function About() {
               </p>
 
               <h2 className="mt-1.5 text-xl font-black leading-snug text-[#2D2433] sm:mt-3 sm:text-4xl lg:text-5xl">
-                Dorothea Alexandra <br className="hidden sm:block" />
+                Dorothea Alexandra <br />
                 Manuputty, <span className="text-pink-500">S.Ds</span>
               </h2>
 
