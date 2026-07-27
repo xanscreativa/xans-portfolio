@@ -7,13 +7,12 @@
 :root {
   --background: #FFFDFC;
   --surface: #FFFFFF;
-
   --foreground: #2D2433;
   --body: #6B6570;
-
+  --text: #2D2433;
+  --text-muted: #6B6570;
   --primary: #E85D8E;
   --primary-hover: #D94B7D;
-
   --border: #F4E3E8;
 }
 
@@ -24,21 +23,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
-
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
-
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
-
   --color-border: var(--border);
-
   --font-sans: var(--font-jakarta);
 }
-bg-primary
-text-text
-text-text-muted
-border-border
 
 /* =========================
    Base
@@ -58,6 +49,7 @@ body {
   font-family: var(--font-jakarta), sans-serif;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
+  cursor: none;
 }
 
 img {
@@ -66,13 +58,18 @@ img {
 }
 
 ::selection {
-  background: #F7C6D8;
-  color: #2D2433;
+  background: #f7c6d8;
+  color: #2d2433;
 }
 
 :focus-visible {
-  outline: 2px solid #E85D8E;
+  outline: 2px solid #e85d8e;
   outline-offset: 4px;
+}
+
+a,
+button {
+  cursor: none;
 }
 
 /* =========================
@@ -98,7 +95,8 @@ img {
 }
 
 @keyframes pulse-slow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -112,33 +110,12 @@ img {
 .animate-pulse-slow {
   animation: pulse-slow 2.5s ease-in-out infinite;
 }
-body{
-    cursor:none;
-}
 
-a,
-button{
-    cursor:none;
-}
-:root {
-  --background: #FFFDFC;
-  --surface: #FFFFFF;
-
-  --text: #2D2433;
-  --text-muted: #6B6570;
-
-  --primary: #E85D8E;
-  --primary-hover: #D94B7D;
-
-  --border: #F4E3E8;
-}
 @media (min-width: 1024px) {
-
   html,
   body,
   a,
   button {
     cursor: none;
   }
-
 }

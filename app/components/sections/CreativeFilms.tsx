@@ -26,11 +26,7 @@ function FeaturedMedia({
     <div ref={containerRef} className="relative group">
       <div
         onClick={onOpenModal}
-<<<<<<< HEAD
-        className={`relative block overflow-hidden rounded-[36px] bg-[#1E1B22] cursor-pointer ${
-=======
         className={`relative block overflow-hidden rounded-2xl sm:rounded-[36px] bg-[#1E1B22] cursor-pointer ${
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
           isPortrait ? "aspect-[9/16]" : "aspect-video"
         }`}
       >
@@ -70,11 +66,7 @@ function FeaturedMedia({
 
       <button
         onClick={onOpenModal}
-<<<<<<< HEAD
-        className="absolute right-4 top-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-pink-500 font-bold shadow-lg transition hover:scale-110 active:scale-95 sm:right-10 sm:top-10"
-=======
         className="absolute right-3 top-3 sm:right-6 sm:top-6 lg:right-10 lg:top-10 flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-white text-pink-500 font-bold shadow-lg transition hover:scale-110 active:scale-95 text-xs sm:text-base"
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
         aria-label="Play Featured Video"
       >
         ▶
@@ -116,31 +108,14 @@ export default function CreativeFilms() {
   };
 
   return (
-<<<<<<< HEAD
-    <section className="relative overflow-hidden py-20 sm:py-32 bg-[#FFFDFC]">
-      {/* Background Glow */}
-      <div className="absolute left-1/2 top-32 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-pink-200/30 blur-[120px]" />
-=======
     <section className="relative overflow-hidden py-14 sm:py-24 lg:py-32 bg-[#FFFDFC]">
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-1/2 top-32 h-[350px] w-[350px] sm:h-[500px] sm:w-[500px] -translate-x-1/2 rounded-full bg-pink-200/30 blur-[100px] sm:blur-[120px]" />
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
 
       <div className="mx-auto w-[92%] max-w-7xl">
         {/* HEADER SECTION */}
         <FadeUp>
           <div className="text-center sm:text-left">
-<<<<<<< HEAD
-            <p className="text-sm uppercase tracking-[0.35em] text-pink-500">
-              SHOWREEL
-            </p>
-
-            <h2 className="mt-5 mx-auto max-w-3xl text-5xl font-black leading-tight text-[#2D2433] sm:mx-0">
-              Every frame is crafted to tell a story.
-            </h2>
-
-            <p className="mt-6 mx-auto max-w-2xl text-lg leading-8 text-[#6B6570] sm:mx-0">
-=======
             <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-pink-500 font-semibold">
               SHOWREEL
             </p>
@@ -150,7 +125,6 @@ export default function CreativeFilms() {
             </h2>
 
             <p className="mt-4 sm:mt-6 mx-auto max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed sm:leading-8 text-[#6B6570] sm:mx-0">
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
               A curated collection of video editing, motion graphics, AI-assisted
               visuals, and creative storytelling.
             </p>
@@ -159,19 +133,11 @@ export default function CreativeFilms() {
 
         {/* FEATURED BANNER ATAS */}
         <FadeUp delay={0.15}>
-<<<<<<< HEAD
-          <div className="mt-12 grid items-center gap-10 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-16">
-            <div className="mx-auto w-full max-w-[380px] sm:max-w-[400px]">
-              <div className="absolute inset-0 rounded-[60px] bg-pink-200 blur-[80px] opacity-30" />
-
-              <div className="group relative rounded-[48px] border border-pink-100 bg-white p-4 shadow-[0_40px_90px_rgba(0,0,0,.08)] transition-all duration-600 hover:-translate-y-1.5 hover:shadow-[0_50px_100px_rgba(233,106,152,0.15)]">
-=======
           <div className="mt-8 sm:mt-12 grid items-center gap-6 sm:gap-10 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-16">
             <div className="mx-auto w-full max-w-[320px] sm:max-w-[400px]">
               <div className="absolute inset-0 rounded-[40px] sm:rounded-[60px] bg-pink-200 blur-[60px] sm:blur-[80px] opacity-30" />
 
               <div className="group relative rounded-3xl sm:rounded-[48px] border border-pink-100 bg-white p-3 sm:p-4 shadow-[0_20px_50px_rgba(0,0,0,.06)] sm:shadow-[0_40px_90px_rgba(0,0,0,.08)] transition-all duration-600 hover:-translate-y-1.5 hover:shadow-[0_50px_100px_rgba(233,106,152,0.15)]">
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
                 <FeaturedMedia
                   featured={featured}
                   onOpenModal={() => handleOpenModal(featured)}
@@ -180,30 +146,11 @@ export default function CreativeFilms() {
             </div>
 
             <div>
-<<<<<<< HEAD
-              <div className="rounded-[36px] border border-pink-100 bg-white p-6 sm:p-10 shadow-xl text-center sm:text-left">
-=======
               <div className="rounded-3xl sm:rounded-[36px] border border-pink-100 bg-white p-5 sm:p-8 lg:p-10 shadow-lg text-center sm:text-left">
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
                 <p className="text-xs uppercase tracking-[0.3em] text-pink-500 font-bold">
                   Featured Project
                 </p>
 
-<<<<<<< HEAD
-                <h3 className="mt-4 text-4xl font-black text-[#2D2433]">
-                  {featured.title}
-                </h3>
-
-                <p className="mt-5 text-lg leading-8 text-[#6B6570]">
-                  {featured.description}
-                </p>
-
-                <div className="mt-8 flex flex-wrap justify-center gap-3 sm:justify-start">
-                  {featured.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-pink-50 px-4 py-2 text-sm font-semibold text-pink-600"
-=======
                 <h3 className="mt-2.5 sm:mt-4 text-2xl sm:text-3xl lg:text-4xl font-black text-[#2D2433]">
                   {featured.title}
                 </h3>
@@ -217,28 +164,12 @@ export default function CreativeFilms() {
                     <span
                       key={tag}
                       className="rounded-full bg-pink-50 px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-pink-600"
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-<<<<<<< HEAD
-                <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-  <button
-    onClick={() => handleOpenModal(featured)}
-    className="inline-flex items-center justify-center rounded-full bg-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-pink-600 active:scale-95"
-  >
-    View Project →
-  </button>
-  {featured.playlist && (
-    <Button href={featured.playlist} variant="secondary">
-      View Playlist →
-    </Button>
-  )}
-</div>
-=======
                 <div className="mt-6 sm:mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-start">
                   <button
                     onClick={() => handleOpenModal(featured)}
@@ -252,7 +183,6 @@ export default function CreativeFilms() {
                     </Button>
                   )}
                 </div>
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
               </div>
             </div>
           </div>
@@ -260,24 +190,14 @@ export default function CreativeFilms() {
 
         {/* SELECTED VIDEO WORKS GRID */}
         <FadeUp delay={0.3}>
-<<<<<<< HEAD
-          <div className="mt-24">
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-[#2D2433]">
-=======
           <div className="mt-14 sm:mt-20 lg:mt-24">
             <div className="mb-6 sm:mb-8 text-center sm:text-left">
               <h3 className="text-xl sm:text-2xl font-bold text-[#2D2433]">
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
                 Selected Video Works
               </h3>
             </div>
 
-<<<<<<< HEAD
-            <div className="grid gap-8 sm:gap-10 md:grid-cols-2 xl:grid-cols-4">
-=======
             <div className="grid gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-4">
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
               {films.map((film, index) => {
                 // Deteksi apakah item ini adalah GPIB Immanuel Pekanbaru
                 const isGPIB =
@@ -289,11 +209,7 @@ export default function CreativeFilms() {
                     key={film.title || index}
                     project={film}
                     onOpenModal={() => handleOpenModal(film)}
-<<<<<<< HEAD
-                    /* Jika GPIB: Span 2 kolom dan letakkan di tengah */
-=======
                     /* Jika GPIB: Span 2 kolom dan letakkan di tengah pada desktop */
->>>>>>> 213c202 (feat: complete mobile responsive optimization for all sections)
                     className={
                       isGPIB
                         ? "md:col-span-2 xl:col-span-2 xl:col-start-2"
