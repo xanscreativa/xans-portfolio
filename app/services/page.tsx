@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Button from "@/app/components/ui/Button";
 import FadeUp from "@/app/components/animation/FadeUp";
+import ContactCTA from "@/app/components/ContactCTA";
 
 export const metadata: Metadata = {
   title: "Services | XANS Studio",
@@ -261,29 +262,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-24 sm:py-28 lg:py-32">
-        <div className="mx-auto w-[92%] max-w-7xl">
-          <FadeUp>
-            <div className="rounded-[40px] border border-[#F0E0E8] bg-[#2D2433] p-12 text-center shadow-[0_40px_120px_rgba(0,0,0,.15)]">
-              <p className="text-sm uppercase tracking-[0.45em] text-pink-300">
-                Ready to begin?
-              </p>
-              <h2 className="mt-6 text-4xl font-black leading-tight text-white sm:text-5xl">
-                Work with a studio that values clarity, craft, and quiet confidence.
-              </h2>
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#D0BACB]">
-                Share your brief and we’ll shape a thoughtful creative direction tailored to your brand.
-              </p>
-              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button href="/#contact">Contact the Studio</Button>
-                <Button href="/about" variant="secondary">
-                  About the Studio
-                </Button>
-              </div>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
+      {/* Hero CTA Card Component */}
+      <ContactCTA />
     </main>
   );
 }

@@ -6,7 +6,7 @@ import FadeUp from "@/app/components/animation/FadeUp";
 
 export default function ContactCTA() {
   const [copied, setCopied] = useState(false);
-  const email = "dorotheaalexandra@gmail.com"; // Ganti dengan email studio kamu
+  const email = "dorotheaalexandra@gmail.com";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
@@ -27,7 +27,6 @@ export default function ContactCTA() {
             <div className="pointer-events-none absolute -left-16 -bottom-16 h-64 w-64 rounded-full bg-gradient-to-tr from-pink-200/30 to-transparent blur-3xl" />
 
             <div className="relative z-10 flex flex-col items-center">
-              {/* Availability Badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/90 px-3.5 py-1.5 shadow-xs backdrop-blur-md">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
@@ -38,7 +37,6 @@ export default function ContactCTA() {
                 </span>
               </div>
 
-              {/* Title */}
               <h2 className="mt-6 sm:mt-8 max-w-3xl text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-[#2D2433]">
                 Have a visual story in mind? <br />
                 <span className="bg-gradient-to-r from-pink-600 via-pink-500 to-pink-400 bg-clip-text text-transparent">
@@ -46,12 +44,10 @@ export default function ContactCTA() {
                 </span>
               </h2>
 
-              {/* Description */}
               <p className="mt-4 sm:mt-6 max-w-xl text-xs xs:text-sm sm:text-base leading-relaxed text-[#6B6570]">
                 Whether you need strategic graphic design, cinematic video editing, or end-to-end visual identity—let’s build something that resonates.
               </p>
 
-              {/* Action Buttons */}
               <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
                 <a
                   href={`mailto:${email}`}

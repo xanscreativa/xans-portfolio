@@ -6,11 +6,13 @@ import { ReactNode } from "react";
 type Props = {
   children: ReactNode;
   delay?: number;
+  className?: string;
 };
 
 export default function FadeUp({
   children,
   delay = 0,
+  className,
 }: Props) {
   return (
     <motion.div
@@ -30,6 +32,7 @@ export default function FadeUp({
         duration: 0.8,
         delay,
       }}
+      className={className}
     >
       {children}
     </motion.div>

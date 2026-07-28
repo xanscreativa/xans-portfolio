@@ -1,14 +1,141 @@
 ﻿import type { Metadata } from "next";
 import Image from "next/image";
-
-import Button from "@/app/components/ui/Button";
+import Link from "next/link";
 import FadeUp from "@/app/components/animation/FadeUp";
 
 export const metadata: Metadata = {
   title: "About | XANS CREATIVA",
   description:
-    "Xandra is a Graphic Designer based in Indonesia, creating editorial branding, motion, and visual storytelling with clarity and purpose.",
+    "Dorothea Alexandra Manuputty is a Graphic Designer and Video Editor based in Indonesia, creating branding, motion graphics, social media, and visual storytelling with clarity and purpose.",
 };
+
+const journeySteps = [
+  {
+    year: "2020",
+    title: "The Foundation",
+    description: "Started studying Visual Communication Design, exploring the fundamentals of typography, semiotics, and human perception.",
+  },
+  {
+    year: "2021",
+    title: "Early Practice",
+    description: "Began freelancing and working with local design studios, translating classroom theories into real-world commercial deliverables.",
+  },
+  {
+    year: "2022",
+    title: "Research & Academic Growth",
+    description: "Engaged in national research projects (Kedaireka) and won recognition for packaging design and institutional branding.",
+  },
+  {
+    year: "2024",
+    title: "Professional Practice",
+    description: "Stepped into professional graphic design roles at scale, handling complex digital assets and cross-functional brand systems.",
+  },
+  {
+    year: "Today",
+    title: "Purpose-Driven Craft",
+    description: "Helping brands communicate through structured visual storytelling, rigorous research, and timeless execution.",
+  },
+];
+
+const experienceBlocks = [
+  {
+    title: "Graphic Design Artist",
+    subtitle: "Tera Infinity Ultima",
+    timeline: "Februari 2024 — Present",
+    achievements: [
+      "Engineered comprehensive digital assets and visual identities that scaled brand recognition.",
+      "Streamlined visual communication workflows to accelerate campaign turnaround times.",
+      "Elevated social media storytelling consistency across multiple commercial channels.",
+    ],
+  },
+  {
+    title: "Research Project Assistant",
+    subtitle: "Project 'BaTecH' Matching Fund Kedaireka 2022 at SWCU",
+    timeline: "Juni 2022 — Mei 2023",
+    achievements: [
+      "Spearheaded design and marketing strategies for a national research initiative.",
+      "Produced comprehensive activity documentation and high-impact digital/print collateral.",
+    ],
+  },
+  {
+    title: "Assistant Lecturer",
+    subtitle: "Universitas Kristen Satya Wacana",
+    timeline: "September 2022 — Desember 2022",
+    achievements: [
+      "Mentored students in practical design execution, layout theory, and software proficiency.",
+      "Bridged academic concepts with industry-standard production requirements.",
+    ],
+  },
+  {
+    title: "Research Project Assistant",
+    subtitle: "Project 'Millenial Batik Eco Fashion' Matching Fund Kedaireka 2021 at SWCU",
+    timeline: "September 2021 — Agustus 2022",
+    achievements: [
+      "Designed visual lookbooks and marketing assets bridging traditional heritage with modern fashion design.",
+      "Managed visual documentation and cross-disciplinary promotional campaigns.",
+    ],
+  },
+  {
+    title: "Graphic Designer",
+    subtitle: "Biro Promosi, Humas dan Alumni (BPHA) SWCU",
+    timeline: "Februari 2022 — April 2022",
+    achievements: [
+      "Planned and executed institutional communication campaigns for university-wide events.",
+      "Directed photo editing and Instagram visual assets reaching thousands of prospective students.",
+    ],
+  },
+  {
+    title: "Assistant Lecturer",
+    subtitle: "Universitas Kristen Satya Wacana",
+    timeline: "September 2021 — Desember 2021",
+    achievements: [
+      "Supported studio lab sessions, providing technical guidance on graphic workflows.",
+    ],
+  },
+  {
+    title: "Graphic Designer",
+    subtitle: "Dreams Studio Salatiga",
+    timeline: "Agustus 2021 — November 2021",
+    achievements: [
+      "Translated client briefs into cohesive social media grid strategies.",
+      "Executed commercial photography and professional photo editing for studio accounts.",
+    ],
+  },
+];
+
+const education = {
+  degree: "Sarjana Desain (S.Ds) — Desain Komunikasi Visual",
+  institution: "Universitas Kristen Satya Wacana",
+  location: "Salatiga, Indonesia",
+  period: "2018 — 2023",
+  learned: "Learned to view design not as mere styling, but as a systematic language for solving human and commercial problems.",
+};
+
+const certifications = [
+  {
+    title: "SHIMA (Entrepreneurship in Animation)",
+    issuer: "Kemenparekraf & AINAKI",
+    year: "2020",
+  },
+  {
+    title: "Pre-Employment Program: UI/UX Design at Figma",
+    issuer: "Kementerian Ketenagakerjaan RI",
+    year: "2023",
+  },
+];
+
+const achievements = [
+  {
+    title: "Juara 1 / Pemenang Desain Logo HUT ke-63 Pelkat PA",
+    event: "National Level Competition",
+    year: "2022",
+  },
+  {
+    title: "First Place Packaging Design",
+    event: "FESTFORATIKA #3 (National)",
+    year: "2022",
+  },
+];
 
 const philosophy = [
   {
@@ -29,114 +156,119 @@ const philosophy = [
   },
 ];
 
-const experienceBlocks = [
-  {
-    title: "Freelance Graphic Designer",
-    timeline: "2023 — Present",
-    description:
-      "Creating branding, campaign visuals, motion graphics, video editing, social media content, and digital visual communication for brands, organizations, and communities.",
-  },
-  {
-    title: "Media Designer",
-    subtitle: "Church Ministry",
-    timeline: "2022 — Present",
-    description:
-      "Designing church media, educational visuals, event branding, Bible illustrations, social media content, and digital communication materials.",
-  },
+const expertiseCapabilities = [
+  { title: "Brand Identity", level: "Expert" },
+  { title: "Visual Storytelling", level: "Expert" },
+  { title: "Editorial Design", level: "Expert" },
+  { title: "Motion Graphics", level: "Advanced" },
+  { title: "Creative Direction", level: "Advanced" },
+  { title: "Packaging Design", level: "Expert" },
 ];
 
-const skills = {
-  Design: [
-    "Brand Identity",
-    "Campaign Design",
-    "Motion Graphics",
-    "Video Editing",
-    "Illustration",
-    "Editorial Design",
-    "Visual Storytelling",
-    "Social Media Design",
-  ],
-  Software: [
-    "Adobe Photoshop",
-    "Adobe Illustrator",
-    "Adobe Premiere Pro",
-    "Figma",
-    "CapCut",
-    "Canva",
-  ],
-  "Creative Workflow": [
-    "AI-assisted Design",
-    "Prompt Engineering",
-    "Creative Research",
-    "Visual Concept Development",
-    "Content Planning",
-  ],
-};
+const tools = [
+  "Adobe Photoshop",
+  "Adobe Illustrator",
+  "Adobe InDesign",
+  "Adobe Premiere Pro",
+  "Figma",
+  "CapCut",
+  "Canva",
+];
+
+const workingPrinciples = [
+  "Strategic thinking before execution",
+  "Organized, transparent workflow",
+  "Clear, proactive communication",
+  "Rigorous attention to detail",
+  "Absolute deadline commitment",
+];
+
+const hobbies = [
+  "Drawing",
+  "Photography",
+  "Crafting",
+  "Children Ministry",
+  "Minimalism",
+  "Reading",
+];
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#FFFDFC] text-[#2D2433]">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-28">
-        <div className="absolute -left-16 top-16 h-80 w-80 rounded-full bg-pink-100 blur-[120px] opacity-20" />
-        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-pink-200/20 blur-[140px] opacity-30" />
+    <main className="bg-[#FFFDFC] text-[#2D2433] selection:bg-pink-100 selection:text-pink-600 overflow-x-hidden">
+      
+      {/* 1. Personal Manifesto (Hero) */}
+      <section className="relative overflow-hidden bg-white pt-24 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24">
+        <div className="absolute -left-20 top-12 h-96 w-96 rounded-full bg-pink-100 blur-[160px] opacity-15 pointer-events-none" />
+        <div className="absolute right-[-10%] top-[-5%] h-[420px] w-[420px] rounded-full bg-pink-200/20 blur-[180px] opacity-25 pointer-events-none" />
 
-        <div className="relative mx-auto w-[92%] max-w-7xl">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-12">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             
-            {/* Profile Image (Atas di Mobile, Kanan di Desktop) */}
-            <div className="order-1 grid-cols-1 lg:order-2 lg:col-span-5">
+            <div className="order-2 lg:order-1 lg:col-span-7">
               <FadeUp>
-                <div className="relative overflow-hidden rounded-4xl border border-pink-100/80 bg-white p-3 shadow-[0_20px_60px_rgba(229,135,176,.1)]">
-                  <Image
-                    src="/hero/profile.png"
-                    alt="Portrait of Xandra"
-                    width={800}
-                    height={950}
-                    className="h-95 w-full rounded-[26px] object-cover object-top sm:h-120 lg:h-135"
-                    priority
-                  />
-
-                  {/* Card Tagline (Kecil di kiri bawah foto & menimpa foto) */}
-                  <div className="absolute bottom-6 left-6 z-10 max-w-[190px] rounded-2xl border border-white/60 bg-white/80 p-3 shadow-lg backdrop-blur-md sm:max-w-[220px] sm:p-3.5">
-                    <p className="text-[11px] font-medium leading-tight text-[#5C5261] sm:text-xs">
-                      <span className="font-serif text-sm font-bold text-pink-500 sm:text-base">&ldquo;</span>
-                      Thoughtfully Crafted. Beautifully Remembered.
-                      <span className="font-serif text-sm font-bold text-pink-500 sm:text-base">&rdquo;</span>
+                <div className="max-w-2xl">
+                  <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.35em] text-pink-500 mb-3.5">
+                    PERSONAL MANIFESTO
+                  </span>
+                  
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.12] tracking-tight text-[#2D2433]">
+                    I believe great design is not about making things beautiful—it is about making ideas <span className="text-pink-500">meaningful</span>.
+                  </h1>
+                  
+                  <div className="mt-6 space-y-4 text-xs sm:text-sm leading-relaxed text-[#6B6570]">
+                    <p className="font-medium text-[#2D2433]">
+                      Hi, I&apos;m Dorothea Alexandra Manuputty, S.Ds. Rooted in Indonesia, my practice bridges structured research with empathetic visual systems.
                     </p>
+                    <p>
+                      Across commercial studios, national research initiatives, and institutional branding, my goal remains consistent: transforming complex narratives into clear, timeless, and intentional design systems.
+                    </p>
+                  </div>
+
+                  <hr className="my-8 border-pink-100/80" />
+
+                  <div className="grid grid-cols-2 gap-6">
+                    <div>
+                      <span className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.25em] text-pink-500 mb-1.5">
+                        BASED IN
+                      </span>
+                      <p className="text-base sm:text-lg font-bold text-[#2D2433]">
+                        Pekanbaru, Indonesia
+                      </p>
+                    </div>
+                    <div>
+                      <span className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.25em] text-pink-500 mb-1.5">
+                        STATUS
+                      </span>
+                      <p className="text-base sm:text-lg font-bold text-[#2D2433]">
+                        Open to Collaboration
+                      </p>
+                    </div>
                   </div>
                 </div>
               </FadeUp>
             </div>
 
-            {/* Hero Text & Actions (Bawah di Mobile, Kiri di Desktop) */}
-            <div className="order-2 grid-cols-1 lg:order-1 lg:col-span-7">
+            <div className="order-1 lg:order-2 lg:col-span-5">
               <FadeUp>
-                <div className="max-w-2xl">
-                  <p className="text-xs font-semibold uppercase tracking-[0.4em] text-pink-500">
-                    ALEXANDRA
-                  </p>
-                  
-                  {/* Title Role diubah menjadi 2 baris */}
-                  <h1 className="mt-4 text-3xl font-black leading-[1.15] tracking-tight text-[#2D2433] sm:text-5xl lg:text-6xl">
-                    Graphic Designer <br />
-                    <span className="text-pink-500">&amp;</span> Video Editor
-                  </h1>
-                  
-                  <div className="mt-6 space-y-4 text-base leading-relaxed text-[#6B6570] sm:text-lg">
-                    <p>
-                      I&apos;m Xandra, a Graphic Designer based in Indonesia with a Bachelor&apos;s degree in Visual Communication Design from Satya Wacana Christian University. I specialize in branding, campaign design, motion graphics, video editing, and visual storytelling, creating thoughtful visual experiences that help brands and organizations communicate with clarity, purpose, and lasting impact.
+                <div className="relative mx-auto max-w-xs sm:max-w-sm lg:max-w-none overflow-hidden rounded-[36px] border border-pink-100/90 bg-white p-3.5 shadow-[0_24px_70px_rgba(229,135,176,0.12)]">
+                  <Image
+                    src="/hero/profile.png"
+                    alt="Portrait of Dorothea Alexandra Manuputty"
+                    width={800}
+                    height={950}
+                    className="h-[320px] w-full rounded-[28px] object-cover object-top sm:h-[420px] lg:h-[480px]"
+                    priority
+                  />
+                  <div className="absolute bottom-6 right-6 z-10 rounded-2xl border border-pink-100/90 bg-white/95 px-5 py-4 shadow-[0_15px_35px_rgba(45,36,51,0.08)] backdrop-blur-md">
+                    <span className="block text-[10px] font-bold uppercase tracking-[0.25em] text-pink-500 mb-0.5">
+                      PRACTICE
+                    </span>
+                    <p className="text-3xl font-black tracking-tighter text-[#2D2433]">
+                      4+
                     </p>
-                    <p>
-                      I&apos;m passionate about continuous learning and always exploring new creative workflows. I actively experiment with AI-powered creative tools to improve productivity, streamline design processes, and discover innovative ways to solve visual communication challenges.
-                    </p>
-                  </div>
-
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <Button href="/">View Portfolio</Button>
-                    <Button href="/#contact" variant="secondary">
-                      Let&apos;s Connect
-                    </Button>
+                    <span className="block text-[11px] font-medium text-[#6B6570] tracking-wide">
+                      Years Experience
+                    </span>
                   </div>
                 </div>
               </FadeUp>
@@ -146,81 +278,102 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats & Experience */}
-      <section className="py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto w-[92%] max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
-            
-            {/* Stats Side */}
-            <div className="lg:col-span-5">
-              <FadeUp>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.4em] text-pink-500">
-                    Impact
-                  </p>
-                  <h3 className="mt-2 text-3xl font-black text-[#2D2433]">
-                    Professional Stats
-                  </h3>
+      {/* 2. My Journey (Visual Timeline) */}
+      <section className="py-20 bg-[#FFF8FA] border-y border-pink-100/60">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <FadeUp>
+            <div className="max-w-2xl mb-12">
+              <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-2">
+                EVOLUTION
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#2D2433]">
+                The Journey So Far
+              </h2>
+            </div>
+          </FadeUp>
 
-                  <div className="mt-8 grid grid-cols-2 gap-6">
-                    {[
-                      { value: "50+", label: "Completed Projects" },
-                      { value: "8+", label: "Brands & Organizations" },
-                      { value: "4+", label: "Years Experience" },
-                      { value: "200+", label: "Creative Assets" },
-                    ].map((item) => (
-                      <div
-                        key={item.label}
-                        className="rounded-[28px] border border-pink-100/80 bg-white p-6 shadow-[0_20px_50px_rgba(229,135,176,.06)]"
-                      >
-                        <p className="text-4xl font-black tracking-tight text-[#2D2433] sm:text-5xl">
-                          {item.value}
-                        </p>
-                        <p className="mt-2 text-xs font-semibold uppercase tracking-wider leading-relaxed text-[#6B6570]">
-                          {item.label}
-                        </p>
-                      </div>
-                    ))}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            {journeySteps.map((step, index) => (
+              <FadeUp key={step.year} delay={index * 0.08}>
+                <div className="h-full rounded-[26px] border border-pink-100/80 bg-white p-6 shadow-[0_10px_30px_rgba(229,135,176,.05)] flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block rounded-full bg-pink-50 px-3 py-1 text-xs font-black text-pink-500 mb-3">
+                      {step.year}
+                    </span>
+                    <h3 className="text-base font-black text-[#2D2433] mb-2">{step.title}</h3>
+                    <p className="text-xs leading-relaxed text-[#6B6570]">{step.description}</p>
                   </div>
                 </div>
               </FadeUp>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Experience Side */}
+      {/* 3. Professional Impact */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <FadeUp>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { value: "50+", title: "Completed Projects", desc: "Helping brands communicate visually across digital and print mediums." },
+                { value: "8+", title: "Brands & Institutions", desc: "Collaborating with universities, studios, and commercial enterprises." },
+                { value: "4+", title: "Years in Practice", desc: "Refining visual discipline, methodology, and creative direction." },
+                { value: "2+", title: "National Awards", desc: "Recognized nationally for packaging design and logo excellence." },
+              ].map((stat) => (
+                <div key={stat.title} className="rounded-[28px] border border-pink-100/80 bg-[#FFFDFC] p-7 shadow-[0_15px_40px_rgba(229,135,176,.05)]">
+                  <p className="text-4xl font-black tracking-tighter text-[#2D2433]">{stat.value}</p>
+                  <h3 className="mt-2 text-sm font-bold text-pink-500 tracking-wide uppercase">{stat.title}</h3>
+                  <p className="mt-1 text-xs text-[#6B6570] leading-relaxed">{stat.desc}</p>
+                </div>
+              ))}
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* 4. Career Experience & 5. Education & 6. Certifications & 7. Awards */}
+      <section className="py-20 sm:py-28 lg:py-32 border-t border-pink-50">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+            
+            {/* Left Column: Career Experience */}
             <div className="lg:col-span-7">
               <FadeUp>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.4em] text-pink-500">
-                    Journey
-                  </p>
-                  <h3 className="mt-2 text-3xl font-black text-[#2D2433]">
-                    Work Experience
-                  </h3>
+                  <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-2">
+                    WORK HISTORY
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-[#2D2433]">
+                    Career Experience
+                  </h2>
 
-                  <div className="mt-8 rounded-[36px] border border-pink-100/80 bg-white p-8 sm:p-10 shadow-[0_26px_80px_rgba(229,135,176,.08)]">
+                  <div className="mt-10 rounded-[32px] border border-pink-100/80 bg-white p-6 sm:p-10 shadow-[0_20px_60px_rgba(229,135,176,.05)]">
                     <div className="space-y-10">
                       {experienceBlocks.map((block) => (
-                        <div key={block.title} className="relative pl-6 border-l-2 border-pink-200/80">
-                          <span className="absolute -left-1.75 top-1 h-3 w-3 rounded-full bg-pink-500 ring-4 ring-white" />
+                        <div key={`${block.title}-${block.timeline}`} className="relative pl-6 sm:pl-8 border-l-2 border-pink-200/80">
+                          <span className="absolute -left-1.75 top-1.5 h-3.5 w-3.5 rounded-full bg-pink-500 ring-4 ring-white" />
                           
-                          <div className="flex flex-wrap items-baseline justify-between gap-2">
-                            <h4 className="text-lg font-black text-[#2D2433]">
-                              {block.title}
-                            </h4>
-                            <span className="rounded-full bg-pink-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-pink-500">
+                          <div className="space-y-1 mb-3">
+                            <span className="inline-flex rounded-full bg-pink-50 px-3 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-pink-500">
                               {block.timeline}
+                            </span>
+                            <h3 className="text-base sm:text-lg font-black text-[#2D2433] tracking-tight">
+                              {block.title}
+                            </h3>
+                            <span className="block text-xs sm:text-sm font-bold tracking-wide text-pink-500/90">
+                              {block.subtitle}
                             </span>
                           </div>
 
-                          {block.subtitle && (
-                            <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-pink-400">
-                              {block.subtitle}
-                            </p>
-                          )}
-
-                          <p className="mt-3 text-sm leading-relaxed text-[#6B6570]">
-                            {block.description}
-                          </p>
+                          <ul className="space-y-2">
+                            {block.achievements.map((ach, idx) => (
+                              <li key={idx} className="text-xs sm:text-sm leading-relaxed text-[#6B6570] flex items-start gap-2">
+                                <span className="text-pink-400 font-bold">•</span>
+                                <span>{ach}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       ))}
                     </div>
@@ -229,138 +382,124 @@ export default function AboutPage() {
               </FadeUp>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Education & Skills Section */}
-      <section className="bg-[#FFF8FA] py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto w-[92%] max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
-            
-            {/* Education Side */}
-            <div className="lg:col-span-5">
+            {/* Right Column: Education, Certifications, Awards */}
+            <div className="lg:col-span-5 space-y-12">
+              
+              {/* Education */}
               <FadeUp>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.4em] text-pink-500">
+                  <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-2">
+                    ACADEMIC FOUNDATION
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-[#2D2433]">
                     Education
-                  </p>
-                  <h3 className="mt-2 text-3xl font-black text-[#2D2433]">
-                    Academic Background
-                  </h3>
+                  </h2>
 
-                  <div className="mt-8 rounded-[32px] border border-pink-100/80 bg-white p-8 shadow-[0_20px_50px_rgba(229,135,176,.08)]">
-                    <div className="flex items-center gap-3.5">
-                      <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-pink-50 text-xl font-bold text-pink-500">
-                        🎓
+                  <div className="mt-6 rounded-[26px] border border-pink-100/80 bg-white p-6 sm:p-7 shadow-[0_15px_40px_rgba(229,135,176,.05)]">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-50 px-3.5 py-1 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-pink-500">
+                        {education.period}
                       </span>
-                      <div>
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-pink-500">
-                          Bachelor Degree
-                        </span>
-                        <h4 className="text-lg font-black text-[#2D2433] leading-snug">
-                          Visual Communication Design
-                        </h4>
-                      </div>
                     </div>
-
-                    <hr className="my-6 border-pink-100/60" />
-
-                    <p className="text-base font-bold text-[#2D2433]">
-                      Satya Wacana Christian University
+                    <h3 className="text-lg font-black text-[#2D2433] tracking-tight">
+                      {education.degree}
+                    </h3>
+                    <p className="mt-2 text-xs sm:text-sm font-bold text-[#2D2433]">
+                      {education.institution}
                     </p>
-                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.25em] text-[#6B6570]">
-                      Salatiga, Indonesia
+                    <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-[#6B6570] mt-0.5 mb-4">
+                      {education.location}
+                    </span>
+                    <p className="text-xs text-[#6B6570] italic border-t border-pink-50 pt-3">
+                      &ldquo;{education.learned}&rdquo;
                     </p>
                   </div>
                 </div>
               </FadeUp>
-            </div>
 
-            {/* Skills Side */}
-            <div className="lg:col-span-7">
+              {/* Certifications */}
               <FadeUp>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.4em] text-pink-500">
-                    Capabilities
-                  </p>
-                  <h3 className="mt-2 text-3xl font-black text-[#2D2433]">
-                    Skills & Expertise
-                  </h3>
+                  <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-2">
+                    CREDENTIALS
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-[#2D2433]">
+                    Certifications
+                  </h2>
 
-                  <div className="mt-8 grid gap-6">
-                    {Object.entries(skills).map(([category, items]) => (
-                      <div
-                        key={category}
-                        className="rounded-[28px] border border-pink-100/80 bg-white p-6 shadow-[0_20px_50px_rgba(229,135,176,.06)]"
-                      >
-                        <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-pink-500">
-                          {category}
-                        </p>
-
-                        <div className="mt-4 flex flex-wrap gap-2.5">
-                          {items.map((item) => (
-                            <span
-                              key={item}
-                              className="rounded-full bg-pink-50/70 px-4 py-2 text-sm font-medium text-[#2D2433] border border-pink-100/50 transition duration-200 hover:bg-pink-100 hover:text-pink-600"
-                            >
-                              {item}
-                            </span>
-                          ))}
-                        </div>
+                  <div className="mt-6 space-y-3.5">
+                    {certifications.map((cert) => (
+                      <div key={cert.title} className="rounded-[22px] border border-pink-100/80 bg-white p-5 shadow-[0_10px_30px_rgba(229,135,176,.04)]">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-pink-500">{cert.year}</span>
+                        <h3 className="text-sm font-bold text-[#2D2433] mt-1">{cert.title}</h3>
+                        <p className="text-xs text-[#6B6570] mt-0.5">{cert.issuer}</p>
                       </div>
                     ))}
                   </div>
                 </div>
               </FadeUp>
+
+              {/* Awards */}
+              <FadeUp>
+                <div>
+                  <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-2">
+                    RECOGNITION
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-[#2D2433]">
+                    Awards &amp; Competitions
+                  </h2>
+
+                  <div className="mt-6 space-y-3.5">
+                    {achievements.map((ach) => (
+                      <div key={ach.title} className="rounded-[22px] border border-pink-100/80 bg-white p-5 shadow-[0_10px_30px_rgba(229,135,176,.04)]">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-pink-500">{ach.year}</span>
+                        <h3 className="text-sm font-bold text-[#2D2433] mt-1">{ach.title}</h3>
+                        <p className="text-xs text-[#6B6570] mt-0.5">{ach.event}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeUp>
+
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* Design Philosophy Section */}
-      <section className="relative overflow-hidden bg-[#FFFDFC] py-20 sm:py-24 lg:py-28">
+      {/* 8. Design Philosophy */}
+      <section className="relative overflow-hidden bg-[#FFF8FA] py-20 sm:py-26 lg:py-32 border-y border-pink-100/60">
         <div className="absolute left-1/2 top-1/2 -z-10 h-75 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-100/40 blur-[130px]" />
 
-        <div className="mx-auto w-[92%] max-w-7xl">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           <FadeUp>
-            <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
-              <div className="lg:col-span-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.4em] text-pink-500">
-                  DESIGN PHILOSOPHY
-                </p>
-                <h2 className="mt-3 text-3xl font-black text-[#2D2433] sm:text-4xl lg:text-5xl lg:leading-tight">
-                  Four values that shape the work.
-                </h2>
-              </div>
-              <div className="lg:col-span-5">
-                <p className="text-base leading-relaxed text-[#6B6570] sm:text-lg">
-                  The studio approach is not only about strong visuals, but a calm, meaningful process that makes every project feel intentional and elevated.
-                </p>
-              </div>
+            <div className="max-w-2xl mb-12">
+              <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-2">
+                DESIGN PHILOSOPHY
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#2D2433]">
+                Core principles guiding every visual system.
+              </h2>
             </div>
           </FadeUp>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {philosophy.map((item, index) => (
               <FadeUp key={item.title} delay={index * 0.08}>
-                <article className="group relative flex h-full flex-col justify-between rounded-[28px] border border-pink-100/80 bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-pink-300 hover:shadow-[0_20px_40px_rgba(229,135,176,.15)] shadow-[0_10px_30px_rgba(229,135,176,.06)]">
+                <article className="group relative flex h-full flex-col justify-between rounded-[26px] border border-pink-100/80 bg-white p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-pink-300 hover:shadow-[0_20px_40px_rgba(229,135,176,.12)] shadow-[0_10px_30px_rgba(229,135,176,.05)]">
                   <div>
-                    <div className="flex items-center justify-between border-b border-pink-50 pb-4">
-                      <span className="text-xs font-bold uppercase tracking-[0.25em] text-pink-500">
+                    <div className="flex items-center justify-between border-b border-pink-50 pb-3.5">
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-pink-500">
                         {item.title}
                       </span>
                       <span className="text-xs font-black text-pink-200 transition-colors duration-300 group-hover:text-pink-400">
                         0{index + 1}
                       </span>
                     </div>
-
-                    <p className="mt-5 text-sm leading-relaxed text-[#6B6570] sm:text-base">
+                    <p className="mt-4 text-xs sm:text-sm leading-relaxed text-[#6B6570]">
                       {item.description}
                     </p>
                   </div>
-
                   <div className="mt-6 h-1 w-8 rounded-full bg-pink-100 transition-all duration-300 group-hover:w-full group-hover:bg-pink-400" />
                 </article>
               </FadeUp>
@@ -369,34 +508,166 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Let's Connect CTA */}
-      <section className="relative overflow-hidden bg-[#FFF8FA] py-20 sm:py-24 lg:py-28">
-        <div className="absolute left-1/2 top-1/2 h-[400px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-200/30 blur-[120px]" />
+      {/* 9. Creative Expertise & 10. Tools */}
+      <section className="py-20 sm:py-28 lg:py-32">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            
+            {/* Creative Expertise */}
+            <div className="lg:col-span-8">
+              <FadeUp>
+                <div>
+                  <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-2">
+                    CAPABILITIES
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#2D2433] mb-8">
+                    Creative Expertise
+                  </h2>
 
-        <div className="relative mx-auto w-[92%] max-w-7xl">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {expertiseCapabilities.map((cap) => (
+                      <div key={cap.title} className="flex items-center justify-between rounded-[22px] border border-pink-100/80 bg-white p-5 shadow-[0_10px_30px_rgba(229,135,176,.04)]">
+                        <span className="text-sm font-bold text-[#2D2433]">{cap.title}</span>
+                        <span className="rounded-full bg-pink-50 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-pink-500">
+                          {cap.level}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeUp>
+            </div>
+
+            {/* Tools */}
+            <div className="lg:col-span-4">
+              <FadeUp>
+                <div className="h-full rounded-[28px] border border-pink-100/80 bg-white p-6 sm:p-8 shadow-[0_15px_40px_rgba(229,135,176,.05)] flex flex-col justify-between">
+                  <div>
+                    <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-2">
+                      TOOLKIT
+                    </span>
+                    <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#2D2433] mb-6">
+                      Software
+                    </h2>
+
+                    <div className="flex flex-wrap gap-2">
+                      {tools.map((tool) => (
+                        <span key={tool} className="rounded-full bg-pink-50/70 px-3.5 py-1.5 text-xs font-medium text-[#2D2433] border border-pink-100/60">
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="mt-8 text-[11px] text-[#6B6570] italic">
+                    *Tools change; strategic design thinking remains constant.
+                  </p>
+                </div>
+              </FadeUp>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* 11. Working With Me */}
+      <section className="py-20 bg-white border-t border-pink-50">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           <FadeUp>
-            <div className="rounded-[40px] border border-pink-100/80 bg-white p-12 text-center shadow-[0_30px_70px_rgba(229,135,176,.12)] md:p-16">
-              <div className="inline-flex items-center gap-2 rounded-full bg-pink-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.45em] text-pink-500">
-                <span className="h-2 w-2 rounded-full bg-pink-500" />
-                Let&apos;s Connect
-              </div>
-              
-              <h2 className="mx-auto mt-6 max-w-3xl text-3xl font-black leading-tight text-[#2D2433] sm:text-4xl md:text-5xl">
-                Interested in Working Together?
+            <div className="max-w-2xl mb-12">
+              <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-2">
+                COLLABORATION
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#2D2433]">
+                How I Collaborate
               </h2>
-              
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#6B6570]">
-                I&apos;m currently open to full-time opportunities, freelance projects, and creative collaborations.
+              <p className="mt-2 text-xs sm:text-sm text-[#6B6570]">
+                Building trust through clear standards and professional commitment.
               </p>
-              
-              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button href="/#contact">Let&apos;s Connect</Button>
-                <Button href="/" variant="secondary">View Portfolio</Button>
+            </div>
+          </FadeUp>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {workingPrinciples.map((principle, index) => (
+              <FadeUp key={principle} delay={index * 0.05}>
+                <div className="rounded-[24px] border border-pink-100/80 bg-[#FFFDFC] p-6 shadow-[0_10px_30px_rgba(229,135,176,.04)] flex items-center gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-pink-50 text-pink-500 font-bold text-sm">
+                    ✓
+                  </div>
+                  <span className="text-sm font-bold text-[#2D2433]">{principle}</span>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 12. Beyond Design */}
+      <section className="py-20 bg-[#FFF8FA] border-t border-pink-100/60">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <FadeUp>
+            <div className="max-w-3xl">
+              <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-2">
+                HUMAN ELEMENT
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#2D2433] mb-6">
+                Beyond the Screen
+              </h2>
+              <p className="text-xs sm:text-sm leading-relaxed text-[#6B6570] mb-8 font-medium">
+                Design is deeply human, and inspiration lives outside the pixels. Whether I am sketching new concepts in a notebook, capturing organic textures through photography, or serving in children&apos;s ministry, these experiences ground my worldview and infuse authenticity into my creative work.
+              </p>
+
+              <div className="flex flex-wrap gap-3">
+                {hobbies.map((hobby) => (
+                  <span key={hobby} className="rounded-full bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#2D2433] border border-pink-100 shadow-xs">
+                    {hobby}
+                  </span>
+                ))}
               </div>
             </div>
           </FadeUp>
         </div>
       </section>
+
+      {/* 13. Final CTA */}
+      <section className="relative overflow-hidden bg-white py-20 sm:py-28 lg:py-32">
+        <div className="absolute left-1/2 top-1/2 h-[400px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-200/30 blur-[120px]" />
+
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <FadeUp>
+            <div className="rounded-[36px] border border-pink-100/80 bg-[#FFFDFC] p-8 sm:p-14 lg:p-16 text-center shadow-[0_30px_70px_rgba(229,135,176,.1)]">
+              <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.3em] text-pink-500 mb-3">
+                LET&apos;S BUILD SOMETHING MEANINGFUL TOGETHER
+              </span>
+              
+              <h2 className="mx-auto mt-2 max-w-2xl text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-[#2D2433]">
+                Every memorable brand starts with a thoughtful conversation.
+              </h2>
+              
+              <p className="mx-auto mt-4 max-w-xl text-xs sm:text-sm leading-relaxed text-[#6B6570]">
+                Whether you have a full-time position, a brand identity project, or a creative partnership in mind, my inbox is always open.
+              </p>
+              
+              <div className="mt-8 flex flex-row items-center justify-center gap-3.5 w-full max-w-sm mx-auto">
+                <Link
+                  href="/#contact"
+                  className="flex-1 inline-flex items-center justify-center rounded-full bg-pink-500 px-6 py-4 text-xs sm:text-sm font-bold text-white shadow-[0_10px_25px_rgba(236,72,153,0.3)] transition-all duration-300 hover:bg-pink-600 hover:shadow-[0_15px_30px_rgba(236,72,153,0.4)] text-center whitespace-nowrap"
+                >
+                  Start a Project
+                </Link>
+                <Link
+                  href="/"
+                  className="flex-1 inline-flex items-center justify-center rounded-full border border-pink-200 bg-white px-6 py-4 text-xs sm:text-sm font-bold text-[#2D2433] shadow-xs transition-all duration-300 hover:border-pink-400 hover:bg-pink-50/50 text-center whitespace-nowrap"
+                >
+                  Back to Home
+                </Link>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
     </main>
   );
 }
