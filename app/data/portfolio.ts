@@ -451,7 +451,79 @@ export const portfolioCollections: PortfolioCollection[] = [
         images: ["/portfolio/ezsquad.jpg"],
       },
     ],
-  },
+  },,
+  // 7. Milenial's Batik Ecoo-Fashion
+  {
+    id: 7,
+    slug: "milenials-batik-ecoo-fashion",
+    title: "Milenial's Batik Ecoo-Fashion",
+    category: "FASHION & EDITORIAL",
+    tagline: "A batik fashion project presented through three lookbooks, packaging, and print media.",
+    description:
+      "A personal design project exploring Milenial's Batik Ecoo-Fashion through editorial lookbooks, packaging, and print media.",
+    cover: "/portfolio/milenial-batik-ecoo-fashion.avif",
+    overview:
+      "The project is presented through three lookbook designs, followed by packaging design and supporting print media. Each lookbook can be opened individually to explore the work in more detail.",
+    challenge:
+      "Presenting a batik eco-fashion collection in a way that feels relevant to a younger audience while keeping the character of batik and the collection's visual identity clear.",
+    solution:
+      "Created a cohesive editorial direction across three lookbooks, then extended the same visual language into packaging and print media applications.",
+    outcome:
+      "A connected set of editorial and physical design materials that communicates the collection across lookbook, packaging, and print formats.",
+    meta: {
+      client: "Milenial's Batik Ecoo-Fashion",
+      industry: "Fashion & Sustainable Design",
+      role: "Graphic Designer",
+      year: "2022",
+      deliverables: "3 Lookbooks, Packaging Design, Print Media",
+      tools: "Adobe Illustrator, Adobe Photoshop",
+    },
+    gallery: [
+      {
+        type: "full",
+        src: "/portfolio/milenial-batik-ecoo-fashion.avif",
+        alt: "Milenial's Batik Ecoo-Fashion",
+        caption: "Three lookbooks, packaging, and print media",
+      },
+    ],
+    items: [
+      {
+        title: "Lookbook 01",
+        subtitle: "Lookbook",
+        description: "Open to explore the full lookbook.",
+        cover: "/portfolio/milenial-lookbook-01.jpg",
+        images: ["/portfolio/milenial-lookbook-01.jpg"],
+      },
+      {
+        title: "Lookbook 02",
+        subtitle: "Lookbook",
+        description: "Open to explore the full lookbook.",
+        cover: "/portfolio/milenial-lookbook-02.jpg",
+        images: ["/portfolio/milenial-lookbook-02.jpg"],
+      },
+      {
+        title: "Lookbook 03",
+        subtitle: "Lookbook",
+        description: "Open to explore the full lookbook.",
+        cover: "/portfolio/milenial-lookbook-03.jpg",
+        images: ["/portfolio/milenial-lookbook-03.jpg"],
+      },
+      {
+        title: "Packaging Design",
+        subtitle: "Packaging",
+        description: "Packaging application for the fashion project.",
+        cover: "/portfolio/milenial-packaging.jpg",
+        images: ["/portfolio/milenial-packaging.jpg"],
+      },
+      {
+        title: "Print Media",
+        subtitle: "Print Media",
+        description: "Print media applications for the fashion project.",
+        cover: "/portfolio/milenial-print-media.jpg",
+        images: ["/portfolio/milenial-print-media.jpg"],
+      },
+    ],
+  }
 ];
 
 // Helper functions for dynamic fetching
