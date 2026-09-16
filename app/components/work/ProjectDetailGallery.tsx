@@ -118,6 +118,7 @@ export default function ProjectDetailGallery({ project }: Props) {
                             alt={book.title}
                             fill
                             sizes="(max-width: 640px) 31vw, 280px"
+                            loading="lazy"
                             className="object-cover"
                           />
                           <span
@@ -167,6 +168,7 @@ export default function ProjectDetailGallery({ project }: Props) {
                               alt={item.title}
                               fill
                               sizes="(max-width: 768px) 92vw, 46vw"
+                              loading="lazy"
                               className="object-cover transition duration-700 group-hover:scale-[1.03]"
                             />
                             <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/45 via-black/0 to-transparent p-6">
@@ -228,6 +230,7 @@ export default function ProjectDetailGallery({ project }: Props) {
                               alt={`${collectionProject.title}-${imageIndex}`}
                               width={1200}
                               height={1400}
+                              loading="lazy"
                               className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
                             />
                             <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition duration-300 group-hover:opacity-100">
