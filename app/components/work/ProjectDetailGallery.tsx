@@ -62,16 +62,6 @@ export default function ProjectDetailGallery({ project }: Props) {
       .slice(0, itemIndex)
       .reduce((acc, item) => acc + item.images.length, 0);
 
-  const handleBookClick = (bookIndex: number) => {
-    // On touch devices the first tap lifts the book; the second tap opens it.
-    if (activeBook !== bookIndex) {
-      setActiveBook(bookIndex);
-      return;
-    }
-
-    openLightbox(getGlobalImageIndex(bookIndex));
-  };
-
   return (
     <>
       <section className="bg-white py-20 sm:py-24">
@@ -97,11 +87,8 @@ export default function ProjectDetailGallery({ project }: Props) {
                     const isActive = activeBook === index;
 
                     return (
-                      <motion.button
+                      <motion.div
                         key={book.title}
-                        type="button"
-                        aria-label={`${book.title}. Tap again to open.`}
-                        onClick={() => handleBookClick(index)}
                         initial={{ y: 0, rotate: rotations[index] }}
                         animate={{
                           y: isActive ? -28 : 0,
@@ -115,12 +102,8 @@ export default function ProjectDetailGallery({ project }: Props) {
                           zIndex: 30,
                           transition: { duration: 0.28, ease: "easeOut" },
                         }}
-                        whileTap={{
-                          scale: 1.025,
-                          transition: { duration: 0.15 },
-                        }}
                         transition={{ duration: 0.32, ease: "easeOut" }}
-                        className={`group relative w-[31%] max-w-[280px] min-w-0 shrink-0 origin-bottom overflow-visible rounded-[8px] text-left outline-none focus-visible:ring-2 focus-visible:ring-[#E96A98] focus-visible:ring-offset-4 ${offsets[index]}`}
+                        className={`group relative w-[31%] max-w-[280px] min-w-0 shrink-0 origin-bottom overflow-visible rounded-[8px] ${offsets[index]}`}
                         style={{
                           perspective: "1200px",
                           transformStyle: "preserve-3d",
@@ -137,27 +120,18 @@ export default function ProjectDetailGallery({ project }: Props) {
                             sizes="(max-width: 640px) 31vw, 280px"
                             className="object-cover"
                           />
-
-                          {/* Subtle paper edge */}
                           <span
                             aria-hidden="true"
                             className="pointer-events-none absolute inset-y-1 right-[-3px] w-[4px] rounded-r-sm bg-gradient-to-r from-black/10 via-white to-black/5"
                           />
-
-                          {/* Lift cue */}
-                          <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/45 to-transparent px-3 pb-3 pt-10 text-[9px] font-bold uppercase tracking-[0.18em] text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:text-[10px]">
-                            Open lookbook
-                          </span>
                         </div>
-                      </motion.button>
+                      </motion.div>
                     );
                   })}
                 </div>
 
                 <div className="mx-auto mt-2 max-w-5xl text-center">
-                  <p className="text-xs text-[#8A818D] sm:text-sm">
-                    Hover a lookbook on desktop. Tap once on mobile to lift it, then tap again to open.
-                  </p>
+                  
                 </div>
               </div>
 
