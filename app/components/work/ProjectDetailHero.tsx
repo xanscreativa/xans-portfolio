@@ -101,6 +101,7 @@ export default function ProjectDetailHero({ project }: Props) {
             alt={project.title}
             width={1800}
             height={1200}
+            sizes="(max-width: 768px) 92vw, 1000px"
             priority
             className="h-[460px] w-full object-cover transition duration-700 hover:scale-[1.02] sm:h-[640px] lg:h-[720px]"
           />
