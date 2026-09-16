@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import FadeUp from "../animation/FadeUp";
+import { useState } from "react";
 
 interface WorkItem {
   category: string;
@@ -86,6 +87,12 @@ const WORKS: readonly WorkItem[] = [
 ] as const;
 
 export default function PortfolioGallery() {
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  const handleNavigate = () => {
+    setIsNavigating(true);
+  };
+
   return (
     <section className="relative overflow-hidden border-t border-pink-100/60 bg-gradient-to-b from-[#FFFDFC] via-[#FFFFFF] to-[#FFF7FB] py-20 sm:py-28 lg:py-36 text-[#2D2433]">
       {/* Background Ambient Glows */}
@@ -143,6 +150,7 @@ export default function PortfolioGallery() {
                         alt={item.title}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 66vw"
+                        loading={index < 2 ? "eager" : "lazy"}
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
 
@@ -178,6 +186,8 @@ export default function PortfolioGallery() {
                   <div className="relative z-10 mt-6 border-t border-pink-100/80 px-1 pt-4 flex items-center justify-between">
                     <Link
                       href={`/portfolio/${item.slug}`}
+                      prefetch={true}
+                      onClick={handleNavigate}
                       className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.18em] text-[#2D2433] transition-colors duration-300 group-hover:text-pink-600"
                     >
                       <span>VIEW COLLECTION</span>
